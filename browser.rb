@@ -1,5 +1,7 @@
 # This ignores dot directories.
 files = Dir.glob( '*' )
+files.delete_if { |x| File.ftype( x ) != 'directory' }
+files.sort!
 
 Shoes.app(
             :title => "shoes-contrib browser",
@@ -17,13 +19,13 @@ Shoes.app(
       @example_box = list_box( :items => [] )
     end
     
-    @category_box.change do |box|
+    @category_box.change { |box|
       @example_flow.style( :hidden => false )
       @example_box.items = Dir.glob( "#{box.text}/*.rb" )
-    end
+    }
     
-    @example_box.change do |box|
+    @example_box.change { |box|
       eval( File.open( box.text, 'rb' ).read, TOPLEVEL_BINDING )
-    end
+    }
   end
 end
