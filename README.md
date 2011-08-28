@@ -32,3 +32,16 @@ and screenshots of your example in action.
 ## I have a question!
 
 If something's not clear, just send an email to the shoes mailing list, shoes@librelist.com, and we'll straighten things out. Or, hop on #shoes on Freenode, if you're into that whole IRC thing.
+
+## To do
+
+* animation/pulsate.rb references an image that doesn't exist.
+* app/download-and-save.rb references an image that should be locally cached and another that doesn't exist.
+* basic/class-book.rb doesn't run.
+* basic/url-shoes-subclassing.rb doesn't run.
+* elements/image-icon.rb references an image which should be locally cached.
+* expert/funnies.rb doesn't work.  It's probably referencing online data which doesn't exist.
+* kernel/debug.rb doesn't work.
+* simple/bounce.rb references images which don't exist.
+* simple/form.rb references images which don't exist.
+* simple/video.rb doesn't work.  It's probably referencing online data which doesn't exist.
