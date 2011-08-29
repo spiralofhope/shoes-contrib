@@ -1,3 +1,5 @@
+# Try changing the shape of the window.
+
 xspeed = 8.4
 yspeed = 6.6
 xdir = 1
@@ -15,6 +17,7 @@ Shoes.app do
       :left => 100,
       :top => 100
     ) do
+    # When clicked.
     alert "You're soooo quick."
   end
 
