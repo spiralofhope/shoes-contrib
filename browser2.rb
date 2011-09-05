@@ -1,8 +1,10 @@
 =begin
-#FIXME:  How do I enforce a margin when I'm "switching screens".
-        #stack( :margin => 5 ) do
-#TODO:  Can I add a right margin?
-#TODO:  Is there a simple 'reset' command, so I don't have to remember/execute a list of @object.remove ?
+# TODO:  Is there a simple 'reset' command, so I don't have to remember/execute a list of @object.remove ?
+# TODO:  When searching for keywords, merge duplicate entries together
+# TODO:  When searching for keywords, display the full keyword just like now, but bold the part of the keyword which is matched.
+# TODO:  Implement regular expressions in the search field?
+# TODO:  Don't ever remove what was typed in the search field.  So when viewing a program, and the user goes back.. it returns to the previous state exactly.
+# TODO:  Media gallery.  (texts, images, videos)
 =end
 
 # This ignores dot directories.
@@ -10,21 +12,69 @@
 @@programs.delete_if { |x| File.ftype( x ) != 'directory' }
 @@programs.sort!
 
-def thumbnail( p )
-  i = File.join( p, 'thumb.png' )
-  if ! File.exists?( i ) then
-    i = 'default-thumbnail.png'
-  end
-  image(
-      i,
-      width: 150,
-      height: 150,
-      :margin_left => 10,
-      :margin_bottom => 5
-    ).click{ display_program( p ) }
+def program_tags( p )
+  file = File.join( p, "#{p}.rb" )
+  rx = %r{^(# tags:)}i
+  #
+  return [p] if ! File.exists?( file )
+  #
+  f = File.open( file, 'r' )
+    file_contents = f.read
+  f.close
+  file_contents.each_line{ |l|
+    if l.match( rx ) != nil then
+      tags = l[$~[0].length..-1].lstrip
+      tags = tags.split(',')
+      tags.each_index{ |e|
+        tags[e].lstrip!
+        tags[e].rstrip!
+      }
+      tags[-1].chomp!
+      return tags
+    end
+  }
+  return [p]
 end
 
-def content( p )
+@@tags_hash = Hash.new
+@@tags_array = Array.new
+@@programs.each{ |p|
+  keywords = program_tags( p )
+  @@tags_hash["#{p}"] = Array.new
+  keywords.each{ |k|
+    @@tags_hash["#{p}"] << k
+    @@tags_array << k
+  }
+}
+@@tags_array.sort!
+@@tags_array.uniq!
+
+def thumbnail( p )
+  # TODO:  This is a cumbersome way to do this.
+  # TODO:  What image file types does Shoes support?
+  i = ""
+  f = File.join( 'default-thumbnail.png' )
+  i = f if File.exists?( f )
+  f = File.join( p, "#{p}.png" )
+  i = f if File.exists?( f )
+  f = File.join( p, "#{p}.jpg" )
+  i = f if File.exists?( f )
+  # If the default thumbnail doesn't actually exist, then this would gracefully default to painting an empty space of the appropriate size (150 x 150px, margins, etc).
+  image(
+    i,
+    width: 150,
+    height: 150,
+    :margin_left => 10,
+    :margin_bottom => 5
+  ).click{ display_program( p ) }
+end
+
+def content( p, *splat )
+  if splat != [] then
+    keywords = splat[0]
+    keywords = " (#{keywords.to_s})"
+    keywords = '' if p == splat[0]
+  end
   @content.append do flow( :margin_top => 10 ) do
     background( lightyellow, :curve => 10, :margin_left => 5, :margin_right => 20 )
       stack( width: 150 ) do
@@ -32,7 +82,7 @@ def content( p )
         thumbnail( p )
       end
       flow( width: width-150 ) do
-        para( link( p ){ display_program( p ) }, "\n" )
+        para( link( p ){ display_program( p ) }, keywords, "\n" )
         # TODO:  How would I have this text be on the same line as the program name (the line above this one) and be right-aligned?
         button "Run" do
           program_run( p )
@@ -45,16 +95,19 @@ def content( p )
 end
 
 def program_run( p )
-  eval( File.open( File.join( p, 'circles.rb' ) ).read, TOPLEVEL_BINDING )
+  eval( File.open( File.join( p, "#{p}.rb" ) ).read, TOPLEVEL_BINDING )
 end
 
+# TODO/IDEA:  On the far right, do a KDE-style 'clear edit box' X.
 def display_search( string )
   @content.clear
-  @@programs.each do |p|
-    if /#{ string }/ =~ p
-      content( p )
-    end
-  end
+  @@tags_hash.each_key{ |k|
+    @@tags_hash[k].each{ |v|
+      if /#{ string }/ =~ v
+        content( k, v )
+      end
+    }
+  }
 end # display_search( word )
 
 def display_all()
@@ -88,7 +141,7 @@ def back_to_main()
   }
 end
 
-# TODO:  Syntax highlighting.
+# TODO:  Syntax highlighting.  Somehow.
 def program_contents( program_directory )
   # Just grabbing the first file for now..
   file = Dir.glob( File.join( program_directory, '*.rb' ) )[0]
@@ -103,6 +156,10 @@ end
 
 def program_description( program_directory )
   # Just kludging it for now.
+  # TODO:  I should use some recognized format for descriptions.  Intelligently parse the file and pull it out.  Maybe even look for a README, file_id.diz, descript.ion or some such?
+  # TODO:  Automatically link() hyperlinks.
+  # TODO:  Automatically markup text markup.
+  # TODO:  If I change the description, then add a button to view the unaltered description.
   return 'aaaaa ' * 20
 end
 
