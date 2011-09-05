@@ -167,8 +167,8 @@ def display_program( program_directory )
   @search.remove
   @content.remove
   @content = stack{
-    background( lightyellow, :curve => 10, :margin_left => 5, :margin_right => 20 )
-    stack( :margin_left => 10, :margin_top => 5, :margin_right => 20 ){
+    background( lightyellow, :curve => 10, :margin_left => 5, :margin_right => 20, :margin_top => 5 )
+    stack( :margin_left => 10, :margin_top => 5, :margin_right => 20, :margin_top => 5 ){
       para( back_to_main() )
       title( program_directory )
       button "Run" do
@@ -190,4 +190,16 @@ Shoes.app(
           ) do
   background( darkgray )
   main()
+  keypress do |key|
+    # The main page
+    # Since @search may be removed
+    if @search.inspect == '(Shoes::EditLine)' then
+      if key.inspect == ':escape' then
+        @search.text = ''
+      end
+    end
+    # Everywhere
+    exit if key.inspect == ':control_q'
+    p key
+  end
 end
