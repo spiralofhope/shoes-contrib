@@ -11,27 +11,41 @@
 @@programs.sort!
 
 def thumbnail( p )
-  # Doesn't work anyways, and if the image doesn't exist then things continue just fine..
-  #return nil if ! File.exists( i )
   i = File.join( p, 'thumb.png' )
-  image( i ).click do
-    display_name( p )
+  if ! File.exists?( i ) then
+    i = 'default-thumbnail.png'
   end
+  image(
+      i,
+      width: 150,
+      height: 150,
+      :margin_left => 10,
+      :margin_bottom => 5
+    ).click{ display_program( p ) }
 end
 
 def content( p )
-  @content.append do 
-    flow( :margin_top => 5, :margin_right => 20, :margin_left => 5 ) do
-      # FIXME:  Curve isn't working properly here, it's overridden by the flow above.
-      background( lightyellow, :curve => 10 )
-      thumbnail( p )
-      para(
-        link( p ){ display_name( p ) },
-        "\n",
-        program_description( p )
-      )
+  @content.append do flow( :margin_top => 10 ) do
+    background( lightyellow, :curve => 10, :margin_left => 5, :margin_right => 20 )
+      stack( width: 150 ) do
+        para  # Blank line above the thumbnail.
+        thumbnail( p )
+      end
+      flow( width: width-150 ) do
+        para( link( p ){ display_program( p ) }, "\n" )
+        # TODO:  How would I have this text be on the same line as the program name (the line above this one) and be right-aligned?
+        button "Run" do
+          program_run( p )
+        end
+        # FIXME:  This text needs a right margin.  I can't find the documentation for that.  (RE-TEST)
+        para( program_description( p ) )
+      end
     end
   end
+end
+
+def program_run( p )
+  eval( File.open( File.join( p, 'circles.rb' ) ).read, TOPLEVEL_BINDING )
 end
 
 def display_search( string )
@@ -53,7 +67,7 @@ end # display_all()
 def main()
   # TODO:  Can I  have the cursor automatically placed in the edit_line when the program launches?
   # @self.width doesn't understand a scroll bar!  TODO:  How can I know if a scroll bar is being painted or not?  How do I know the size of a scroll bar?
-  @search = edit_line( :width => self.width - 26 )
+  @search = edit_line( :width => self.width - 26, :margin_left => 10, :margin_top => 5 )
   @content = flow{}
   display_all()
 
@@ -68,12 +82,13 @@ def main()
 end # main()
 
 def back_to_main()
-  link( "Back\n" ){
+  link( 'Back' ){
     @content.remove
     main()
   }
 end
 
+# TODO:  Syntax highlighting.
 def program_contents( program_directory )
   # Just grabbing the first file for now..
   file = Dir.glob( File.join( program_directory, '*.rb' ) )[0]
@@ -91,19 +106,24 @@ def program_description( program_directory )
   return 'aaaaa ' * 20
 end
 
-def display_name( program_directory )
+def display_program( program_directory )
   @search.remove
   @content.remove
   @content = stack{
-    flow {
-      para(
-        back_to_main(),
-        program_directory,
-      )
+    background( lightyellow, :curve => 10, :margin_left => 5, :margin_right => 20 )
+    stack( :margin_left => 10, :margin_top => 5, :margin_right => 20 ){
+      para( back_to_main() )
+      title( program_directory )
+      button "Run" do
+        program_run( program_directory )
+      end
     }
+    stack( :margin_left => 20 ){
+    thumbnail( program_directory )
     para( program_contents( program_directory ) )
+    }
   }
-end # display_name()
+end # display_program()
 
 Shoes.app(
             :title => "Program Browser",
