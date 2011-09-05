@@ -2,7 +2,7 @@
 #FIXME:  How do I enforce a margin when I'm "switching screens".
         #stack( :margin => 5 ) do
 #TODO:  Can I add a right margin?
-#TODO:  Is there a simple 'reset' command, so I don't have to remember/execute a list of @whatever.remove ?
+#TODO:  Is there a simple 'reset' command, so I don't have to remember/execute a list of @object.remove ?
 =end
 
 # This ignores dot directories.
