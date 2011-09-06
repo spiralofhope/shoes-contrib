@@ -1,5 +1,5 @@
+# categories: test1, another
 # tags: test, testing, wonderful test, random
-
 
 Shoes.app(
             :width => 300,
