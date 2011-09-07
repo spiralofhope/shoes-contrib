@@ -20,12 +20,13 @@ My personal rules are:
 =end
 
 # This ignores dot directories.
+Dir.chdir( 'programs' )
 @@programs = Dir.glob( '*' )
 @@programs.delete_if { |x| File.ftype( x ) != 'directory' }
 @@programs.sort!
 
 def get_list( p, rx )
-  file = File.join( p, "#{p}.rb" )
+  file = File.join( p, "#{ p }.rb" )
   #
   return [ p ] if ! File.exists?( file )
   #
@@ -35,7 +36,7 @@ def get_list( p, rx )
   file_contents.each_line{ |l|
     if l.match( rx ) != nil then
       tags = l[$~[0].length..-1].lstrip
-      tags = tags.split(',')
+      tags = tags.split( ',' )
       tags.each_index{ |e|
         tags[e].lstrip!
         tags[e].rstrip!
@@ -132,7 +133,7 @@ def content( p, *splat )
 end
 
 def program_run( p )
-  eval( File.open( File.join( p, "#{p}.rb" ) ).read, TOPLEVEL_BINDING )
+  eval( File.open( File.join( p, "#{ p }.rb" ) ).read, TOPLEVEL_BINDING )
 end
 
 def display_search( string )
@@ -193,7 +194,7 @@ end # display_categories_list()
 #end # display_all()
 
 def main()
-  # TODO:  Can I  have the cursor automatically placed in the edit_line when the program launches?
+  # TODO:  Can I  have the cursor automatically placed in the edit_line when the program launches?  Maybe toss a tab character at the keyboard?
   # @self.width doesn't understand a scroll bar!  TODO:  How can I know if a scroll bar is being painted or not?  How do I know the size of a scroll bar?
   @search = (
       # How can I have edit_line understand the proposed width of the button and adjust accordingly?
@@ -202,11 +203,11 @@ def main()
   @search_button = (
     button( 'x', :margin_top => 5 ){ @search.text = '' }
   )
-
+  #
   @content = flow{}
   #display_all()
   display_categories_list()
-
+  #
   @search.change do |s|
     if s.text.empty?
       #display_all()
@@ -287,7 +288,7 @@ Shoes.app(
       end
     end
     # Everywhere
-    exit if key.inspect == ':control_q'
+    exit if key.inspect == ':control_q' and confirm( "Quit?" )
     p key
   end
 end
