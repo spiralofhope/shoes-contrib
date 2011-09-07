@@ -102,9 +102,9 @@ def thumbnail( p )
   i = ""
   f = File.join( 'default-thumbnail.png' )
   i = f if File.exists?( f )
-  f = File.join( p, "#{p}.png" )
+  f = File.join( p, "thumbnail.png" )
   i = f if File.exists?( f )
-  f = File.join( p, "#{p}.jpg" )
+  f = File.join( p, "thumbnail.jpg" )
   i = f if File.exists?( f )
   # If the default thumbnail doesn't actually exist, then this would gracefully default to painting an empty space of the appropriate size (150 x 150px, margins, etc).
   image(
