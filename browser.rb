@@ -19,11 +19,13 @@ My personal rules are:
 # TODO:  :margin_bottom => 5 on all the relevant stuff.
 =end
 
-# This ignores dot directories.
-Dir.chdir( 'programs' )
-@@programs = Dir.glob( '*' )
-@@programs.delete_if { |x| File.ftype( x ) != 'directory' }
-@@programs.sort!
+# This is a little specific.. needs fallbacks and preferences.
+# TODO:  Implement a configuration GUI, and store preferences in a plain text file (that's excluded from github)
+def editor( filename )
+  filename = File.join( filename, filename + '.rb' )
+  system( '/usr/bin/geany', filename )
+  rebuild()
+end
 
 def get_list( p, rx )
   file = File.join( p, "#{ p }.rb" )
@@ -56,35 +58,43 @@ def program_categories( p )
   return get_list( p, %r{^(# categories:)}i )
 end
 
-@@tags_hash = Hash.new
-@@tags_array = Array.new
-@@programs.each{ |p|
-  tags = program_tags( p )
-  @@tags_hash["#{ p }"] = Array.new
-  tags.each{ |k|
-    @@tags_hash["#{ p }"] << k
-    @@tags_array << k
-  }
-}
-@@tags_array.sort!
-@@tags_array.uniq!
+def rebuild()
+  # This ignores dot directories.
+  Dir.chdir( 'programs' )
+  @@programs = Dir.glob( '*' )
+  @@programs.delete_if { |x| File.ftype( x ) != 'directory' }
+  @@programs.sort!
 
-@@categories_hash = Hash.new
-@@categories_array = Array.new
-@@programs.each{ |p|
-  categories = program_categories( p )
-  @@categories_hash["#{ p }"] = Array.new
-  categories.each{ |k|
-    @@categories_hash["#{ p }"] << k
-    @@categories_array << k if k != p
+  @@tags_hash = Hash.new
+  @@tags_array = Array.new
+  @@programs.each{ |p|
+    tags = program_tags( p )
+    @@tags_hash["#{ p }"] = Array.new
+    tags.each{ |k|
+      @@tags_hash["#{ p }"] << k
+      @@tags_array << k
+    }
   }
-}
-@@categories_array.sort!
-@@categories_array.uniq!
-# TODO:  This can probably be built into the initial hash assembly, above.  I'm just not so sure how to do that right now..
-@@categories_hash.delete_if{ |key,value|
-  key == value[0]
-}
+  @@tags_array.sort!
+  @@tags_array.uniq!
+
+  @@categories_hash = Hash.new
+  @@categories_array = Array.new
+  @@programs.each{ |p|
+    categories = program_categories( p )
+    @@categories_hash["#{ p }"] = Array.new
+    categories.each{ |k|
+      @@categories_hash["#{ p }"] << k
+      @@categories_array << k if k != p
+    }
+  }
+  @@categories_array.sort!
+  @@categories_array.uniq!
+  # TODO:  This can probably be built into the initial hash assembly, above.  I'm just not so sure how to do that right now..
+  @@categories_hash.delete_if{ |key,value|
+    key == value[0]
+  }
+end
 
 def thumbnail( p )
   # TODO:  This is a cumbersome way to do this.
@@ -102,7 +112,8 @@ def thumbnail( p )
     width: 150,
     height: 150,
     :margin_left => 10,
-    :margin_bottom => 5
+    :margin_bottom => 5,
+    :margin_top => 5
   ).click{ display_program( p ) }
 end
 
@@ -116,7 +127,7 @@ def content( p, *splat )
     flow( :margin_top => 10 ) do
     background( lightyellow, :curve => 10, :margin_left => 5, :margin_right => 20 )
       stack( width: 150 ) do
-        para  # Blank line above the thumbnail.
+        #para  # Blank line above the thumbnail.
         thumbnail( p )
       end
       flow( width: width-150 ) do
@@ -124,6 +135,9 @@ def content( p, *splat )
         # TODO:  How would I have this text be on the same line as the program name (the line above this one) and be right-aligned?
         button "Run" do
           program_run( p )
+        end
+        button "Edit" do
+          editor( p )
         end
         # FIXME:  This text needs a right margin.  I can't find the documentation for that.  (RE-TEST)
         para( program_description( p ) )
@@ -138,14 +152,26 @@ end
 
 def display_search( string )
   @content.clear
+  # A basic limitation since a one or two-character search is too aggressive and not actually useful.
+  return '' if string.length < 3
+  display_search_hash = Hash.new
   @@tags_hash.each_key{ |k|
+    display_search_hash["#{ k }"] = Array.new
     @@tags_hash[k].each{ |v|
-      if /#{ string }/ =~ v
-        content( k, v )
-      end
+      display_search_hash["#{ k }"] << v if /#{ string }/ =~ v
     }
   }
-end # display_search( word )
+  display_search_hash.delete_if{ |k,v|
+    display_search_hash[k] == []
+  }
+  display_search_hash.each_key{ |k|
+    s = ''
+    display_search_hash[k].each{ |v|
+      s << v
+    }
+    content( k, s )
+  }
+end # display_search( string )
 
 # TODO:  Do categories need thumbnails?
 def display_a_category( c )
@@ -168,7 +194,7 @@ def display_a_category( c )
   }
 end
 
-# TODO:  Do categories need thumbnails?
+# TODO:  Category thumbnails would look nice.
 def category( c )
   @content.append do
     flow( :margin_top => 10, :margin_left => 5 ) do
@@ -278,6 +304,7 @@ Shoes.app(
           ) do
   alert "This is a pre-release version.\n\nThere are known bugs and a large to do list.  Read the code for details.\n\n- tags searching is very slow, for now"
   background( darkgray )
+  rebuild()
   main()
   keypress do |key|
     # The main page

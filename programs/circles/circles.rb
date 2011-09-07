@@ -1,4 +1,4 @@
-# tags: oval(), animate{}
+# tags: circles, oval(), animate{}
 # categories: animation, shapes
 
 Shoes.app(
