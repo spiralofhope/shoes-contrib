@@ -2,6 +2,8 @@
 My personal rules are:
 - Name categories with a plural.
 - Make tags with for both the singular and plural forms of a word, if possible.
+- Thumbnails do not have borders.  I will implement this with code.
+- Screenshots will be displayed in alpha-numeric order.
 
 
 # TODO:  Is there a simple 'reset' command, so I don't have to remember/execute a list of @object.remove ?
