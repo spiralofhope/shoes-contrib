@@ -100,6 +100,7 @@ end
 def program_thumbnail( directory )
   # TODO:  This is a cumbersome way to do this.
   # TODO:  What image file types does Shoes support?
+  # FIXME/TODO:  How would I get an animated image to appear?  I don't even know how to properly take those.  Do I have to manually animate the image by swapping out multiple images?  Eww!
   i = File.join( '..', 'default-thumbnail.png' )
   f = File.join( directory, "thumbnail.png" )
   i = f if File.exists?( f )
@@ -116,16 +117,13 @@ def program_thumbnail( directory )
   ).click{ display_program( directory ) }
 end
 
+# This is largely cloned from program_thumbnail(), above.
 def catgegory_thumbnail( category_name )
-  # TODO:  This is a cumbersome way to do this.
-  # TODO:  What image file types does Shoes support?
-  # FIXME/TODO:  How would I get an animated image to appear?  I don't even know how to properly take those.  Do I have to manually animate the image by swapping out multiple images?  Eww!
   i = File.join( '..', 'default-thumbnail.png' )
-  f = File.join( '..', "#{category_name}.png" )
+  f = File.join( '..', "#{ category_name }.png" )
   i = f if File.exists?( f )
-  f = File.join( '..', "#{category_name}.jpg" )
+  f = File.join( '..', "#{ category_name }.jpg" )
   i = f if File.exists?( f )
-  # If the default thumbnail doesn't actually exist, then this would gracefully default to painting an empty space of the appropriate size (150 x 150px, margins, etc).
   image(
     i,
     width: 150,
@@ -317,6 +315,48 @@ def display_program( directory )
   }
 end # display_program( directory )
 
+def rebuild_readme()
+  filename = File.join( '..', 'README.md.prepend' )
+  string = file_read( filename )
+  @@categories_array.each{ |e|
+    # Header
+    a = "\n\n---\n### #{ e }\n"
+    # Image
+    i = "default-thumbnail.png"
+    f = "#{ e }.png"
+    i = f if File.exists?( f )
+    f = "#{ e }.jpg"
+    i = f if File.exists?( f )
+    a.concat( "![#{ e }](#{ i })" )
+    #
+    string.concat( a )
+  }
+  string.concat( "\n\n" )
+  filename = File.join( '..', 'README.md' )
+  file_create( filename, string )
+end
+
+def file_create(
+                  file,
+                  file_contents=''
+                )
+  File.open( file, 'w+' ) { |f| # open file for update
+    f.print file_contents       # write out the example description
+  }                             # file is automatically closed
+end
+
+def file_read( file )
+  # I suspect that there are issues reading files with a space in them.  I'm having a hard time tracking it down though.. TODO: I should adjust the test case.
+  if ! File.exists?( file ) then
+    puts "That file doesn't exist:  '#{ file.inspect }'"
+    return
+  end
+  f = File.open( file, 'r' )
+    string = f.read
+  f.close
+  return string
+end
+
 Shoes.app(
             :title => "Program Browser",
             :width => 640,
@@ -326,6 +366,7 @@ Shoes.app(
   #alert "This is a pre-release version.\n\nThere are known bugs and a large to do list.  Read the code for details."
   background( darkgray )
   rebuild()
+  rebuild_readme()
   main()
   keypress do |key|
     p key
