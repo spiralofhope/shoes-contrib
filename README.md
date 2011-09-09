@@ -49,7 +49,7 @@ TODO `simple/video.rb` doesn't work.  It's probably referencing online data whic
 
 ---
 ### animation
-![animation](default-thumbnail.png)
+![animation](category_thumbnails/animation.png)
 
 ---
 ### apps

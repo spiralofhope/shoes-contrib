@@ -119,10 +119,11 @@ end
 
 # This is largely cloned from program_thumbnail(), above.
 def catgegory_thumbnail( category_name )
-  i = File.join( '..', 'default-thumbnail.png' )
-  f = File.join( '..', "#{ category_name }.png" )
+  dir = File.join( '..', 'category_thumbnails' )
+  i = File.join( dir, 'default-thumbnail.png' )
+  f = File.join( dir, "#{ category_name }.png" )
   i = f if File.exists?( f )
-  f = File.join( '..', "#{ category_name }.jpg" )
+  f = File.join( dir, "#{ category_name }.jpg" )
   i = f if File.exists?( f )
   image(
     i,
@@ -322,11 +323,16 @@ def rebuild_readme()
     # Header
     a = "\n\n---\n### #{ e }\n"
     # Image
-    i = "default-thumbnail.png"
-    f = "#{ e }.png"
+    i = File.join( '..', 'default-thumbnail.png' )
+    dir = File.join( '..', 'category_thumbnails' )
+    #
+    f = File.join( dir, "#{ e }.png" )
     i = f if File.exists?( f )
-    f = "#{ e }.jpg"
+    f = File.join( dir, "#{ e }.jpg" )
     i = f if File.exists?( f )
+    i = i.split( File::Separator )
+    i = i[1..-1].join( '/' )
+    #
     a.concat( "![#{ e }](#{ i })" )
     #
     string.concat( a )
