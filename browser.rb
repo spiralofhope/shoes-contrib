@@ -119,8 +119,8 @@ end
 
 # This is largely cloned from program_thumbnail(), above.
 def catgegory_thumbnail( category_name )
-  dir = File.join( '..', 'category_thumbnails' )
-  i = File.join( '..', 'category_thumbnails', 'default-thumbnail.png' )
+  dir = File.join( '..', 'categories' )
+  i = File.join( '..', 'categories', 'default-thumbnail.png' )
   f = File.join( dir, "#{ category_name }.png" )
   i = f if File.exists?( f )
   f = File.join( dir, "#{ category_name }.jpg" )
@@ -316,15 +316,17 @@ def display_program( directory )
   }
 end # display_program( directory )
 
+# TODO:  Left-align the image, and have the category text on the right to the top.
+# TODO:  Category text:  categories/name.txt
 def rebuild_readme()
   filename = File.join( '..', 'README.md.prepend' )
   string = file_read( filename )
   @@categories_array.each{ |e|
     # Header
-    a = "\n\n---\n### #{ e }\n"
+    a = "\n\n---\n## #{ e }\n"
     # Image
     i = File.join( '..', 'default-thumbnail.png' )
-    dir = File.join( '..', 'category_thumbnails' )
+    dir = File.join( '..', 'categories' )
     #
     f = File.join( dir, "#{ e }.png" )
     i = f if File.exists?( f )
@@ -332,7 +334,8 @@ def rebuild_readme()
     i = f if File.exists?( f )
     i = i.split( File::Separator )[-1]
     #i = i[1..-1].join( '/' )
-    i = 'https://github.com/spiralofhope/shoes-contrib/raw/master/category_thumbnails/'.concat( i )
+    # FIXME:  An absolute path like this will break mirrors.  Make it relative.
+    i = 'https://github.com/spiralofhope/shoes-contrib/raw/master/categories/'.concat( i )
     #
     a.concat( "![#{ e }](#{ i })" )
     #
