@@ -332,7 +332,7 @@ def rebuild_readme()
     i = f if File.exists?( f )
     i = i.split( File::Separator )[-1]
     #i = i[1..-1].join( '/' )
-    i = 'raw/master/category_thumbnails/'.concat( i )
+    i = 'https://github.com/spiralofhope/shoes-contrib/raw/master/category_thumbnails/'.concat( i )
     #
     a.concat( "![#{ e }](#{ i })" )
     #

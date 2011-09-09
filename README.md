@@ -49,57 +49,57 @@ TODO `simple/video.rb` doesn't work.  It's probably referencing online data whic
 
 ---
 ### animation
-![animation](raw/master/category_thumbnails/animation.png)
+![animation](https://github.com/spiralofhope/shoes-contrib/raw/master/category_thumbnails/animation.png)
 
 ---
 ### apps
-![apps](raw/master/category_thumbnails/default-thumbnail.png)
+![apps](https://github.com/spiralofhope/shoes-contrib/raw/master/category_thumbnails/default-thumbnail.png)
 
 ---
 ### art
-![art](raw/master/category_thumbnails/default-thumbnail.png)
+![art](https://github.com/spiralofhope/shoes-contrib/raw/master/category_thumbnails/default-thumbnail.png)
 
 ---
 ### basic
-![basic](raw/master/category_thumbnails/default-thumbnail.png)
+![basic](https://github.com/spiralofhope/shoes-contrib/raw/master/category_thumbnails/default-thumbnail.png)
 
 ---
 ### elements
-![elements](raw/master/category_thumbnails/default-thumbnail.png)
+![elements](https://github.com/spiralofhope/shoes-contrib/raw/master/category_thumbnails/default-thumbnail.png)
 
 ---
 ### events
-![events](raw/master/category_thumbnails/default-thumbnail.png)
+![events](https://github.com/spiralofhope/shoes-contrib/raw/master/category_thumbnails/default-thumbnail.png)
 
 ---
 ### expert
-![expert](raw/master/category_thumbnails/default-thumbnail.png)
+![expert](https://github.com/spiralofhope/shoes-contrib/raw/master/category_thumbnails/default-thumbnail.png)
 
 ---
 ### good
-![good](raw/master/category_thumbnails/default-thumbnail.png)
+![good](https://github.com/spiralofhope/shoes-contrib/raw/master/category_thumbnails/default-thumbnail.png)
 
 ---
 ### kernel
-![kernel](raw/master/category_thumbnails/default-thumbnail.png)
+![kernel](https://github.com/spiralofhope/shoes-contrib/raw/master/category_thumbnails/default-thumbnail.png)
 
 ---
 ### manipulation
-![manipulation](raw/master/category_thumbnails/default-thumbnail.png)
+![manipulation](https://github.com/spiralofhope/shoes-contrib/raw/master/category_thumbnails/default-thumbnail.png)
 
 ---
 ### position
-![position](raw/master/category_thumbnails/default-thumbnail.png)
+![position](https://github.com/spiralofhope/shoes-contrib/raw/master/category_thumbnails/default-thumbnail.png)
 
 ---
 ### shapes
-![shapes](raw/master/category_thumbnails/default-thumbnail.png)
+![shapes](https://github.com/spiralofhope/shoes-contrib/raw/master/category_thumbnails/default-thumbnail.png)
 
 ---
 ### simple
-![simple](raw/master/category_thumbnails/default-thumbnail.png)
+![simple](https://github.com/spiralofhope/shoes-contrib/raw/master/category_thumbnails/default-thumbnail.png)
 
 ---
 ### styles
-![styles](raw/master/category_thumbnails/default-thumbnail.png)
+![styles](https://github.com/spiralofhope/shoes-contrib/raw/master/category_thumbnails/default-thumbnail.png)
 
