@@ -97,12 +97,10 @@ def rebuild()
   }
 end
 
-def thumbnail( directory )
+def program_thumbnail( directory )
   # TODO:  This is a cumbersome way to do this.
   # TODO:  What image file types does Shoes support?
-  i = ""
-  f = File.join( 'default-thumbnail.png' )
-  i = f if File.exists?( f )
+  i = File.join( '..', 'default-thumbnail.png' )
   f = File.join( directory, "thumbnail.png" )
   i = f if File.exists?( f )
   f = File.join( directory, "thumbnail.jpg" )
@@ -118,6 +116,26 @@ def thumbnail( directory )
   ).click{ display_program( directory ) }
 end
 
+def catgegory_thumbnail( category_name )
+  # TODO:  This is a cumbersome way to do this.
+  # TODO:  What image file types does Shoes support?
+  # FIXME/TODO:  How would I get an animated image to appear?  I don't even know how to properly take those.  Do I have to manually animate the image by swapping out multiple images?  Eww!
+  i = File.join( '..', 'default-thumbnail.png' )
+  f = File.join( '..', "#{category_name}.png" )
+  i = f if File.exists?( f )
+  f = File.join( '..', "#{category_name}.jpg" )
+  i = f if File.exists?( f )
+  # If the default thumbnail doesn't actually exist, then this would gracefully default to painting an empty space of the appropriate size (150 x 150px, margins, etc).
+  image(
+    i,
+    width: 150,
+    height: 150,
+    :margin_left => 10,
+    :margin_bottom => 5,
+    :margin_top => 5
+  ).click{ display_a_category( category_name ) }
+end
+
 def content( directory, *splat )
   if splat != [] then
     tags = splat[0]
@@ -126,10 +144,10 @@ def content( directory, *splat )
   end
   @content.append do
     flow( :margin_top => 10 ) do
-    background( lightyellow, :curve => 10, :margin_left => 5, :margin_right => 20 )
+      background( lightyellow, :curve => 10, :margin_left => 5, :margin_right => 20 )
       stack( width: 150 ) do
         #para  # Blank line above the thumbnail.
-        thumbnail( directory )
+        program_thumbnail( directory )
       end
       flow( width: width-150 ) do
         para( link( directory ){ display_program( directory ) }, tags, "\n" )
@@ -174,7 +192,6 @@ def display_search( string )
   }
 end # display_search( string )
 
-# TODO:  Category thumbnails.
 def display_a_category( category_name )
   @content.clear
   @content.append do
@@ -195,13 +212,15 @@ def display_a_category( category_name )
   }
 end # display_a_category( category_name )
 
-# TODO:  Category thumbnails would look nice.
 def category( category_name )
-p category_name
   @content.append do
-    flow( :margin_top => 10, :margin_left => 5 ) do
+    flow( :margin_top => 10 ) do
       background( lightyellow, :curve => 10, :margin_left => 5, :margin_right => 20 )
-      stack( :margin_left => 5 ) do
+      stack( width: 150 ) do
+        #para  # Blank line above the thumbnail.
+        catgegory_thumbnail( category_name )
+      end
+      flow( width: width-150 ) do
         para( link( category_name ){ display_a_category( category_name ) } )
       end
     end
@@ -292,7 +311,7 @@ def display_program( directory )
       end
     }
     stack( :margin_left => 20 ){
-    thumbnail( directory )
+    program_thumbnail( directory )
     para( program_contents( directory ) )
     }
   }
@@ -304,20 +323,24 @@ Shoes.app(
             :height => 460,
             :resizeable => true
           ) do
-  alert "This is a pre-release version.\n\nThere are known bugs and a large to do list.  Read the code for details."
+  #alert "This is a pre-release version.\n\nThere are known bugs and a large to do list.  Read the code for details."
   background( darkgray )
   rebuild()
   main()
   keypress do |key|
+    p key
+    #
     # The main page
+    #
     # Since @search may be removed
     if @search.inspect != nil then
       if key.inspect == ':escape' then
         @search.text = ''
       end
     end
+    #
     # Everywhere
+    #
     exit if key.inspect == ':control_q' and confirm( "Quit?" )
-    p key
   end
 end
