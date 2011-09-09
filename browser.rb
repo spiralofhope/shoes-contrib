@@ -101,7 +101,7 @@ def program_thumbnail( directory )
   # TODO:  This is a cumbersome way to do this.
   # TODO:  What image file types does Shoes support?
   # FIXME/TODO:  How would I get an animated image to appear?  I don't even know how to properly take those.  Do I have to manually animate the image by swapping out multiple images?  Eww!
-  i = File.join( '..', 'default-thumbnail.png' )
+  i = File.join( 'default-thumbnail.png' )
   f = File.join( directory, "thumbnail.png" )
   i = f if File.exists?( f )
   f = File.join( directory, "thumbnail.jpg" )
@@ -120,7 +120,7 @@ end
 # This is largely cloned from program_thumbnail(), above.
 def catgegory_thumbnail( category_name )
   dir = File.join( '..', 'category_thumbnails' )
-  i = File.join( dir, 'default-thumbnail.png' )
+  i = File.join( '..', 'category_thumbnails', 'default-thumbnail.png' )
   f = File.join( dir, "#{ category_name }.png" )
   i = f if File.exists?( f )
   f = File.join( dir, "#{ category_name }.jpg" )
@@ -330,8 +330,9 @@ def rebuild_readme()
     i = f if File.exists?( f )
     f = File.join( dir, "#{ e }.jpg" )
     i = f if File.exists?( f )
-    i = i.split( File::Separator )
-    i = i[1..-1].join( '/' )
+    i = i.split( File::Separator )[-1]
+    #i = i[1..-1].join( '/' )
+    i = 'raw/master/category_thumbnails/'.concat( i )
     #
     a.concat( "![#{ e }](#{ i })" )
     #

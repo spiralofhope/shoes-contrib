@@ -49,57 +49,57 @@ TODO `simple/video.rb` doesn't work.  It's probably referencing online data whic
 
 ---
 ### animation
-![animation](category_thumbnails/animation.png)
+![animation](raw/master/category_thumbnails/animation.png)
 
 ---
 ### apps
-![apps](default-thumbnail.png)
+![apps](raw/master/category_thumbnails/default-thumbnail.png)
 
 ---
 ### art
-![art](default-thumbnail.png)
+![art](raw/master/category_thumbnails/default-thumbnail.png)
 
 ---
 ### basic
-![basic](default-thumbnail.png)
+![basic](raw/master/category_thumbnails/default-thumbnail.png)
 
 ---
 ### elements
-![elements](default-thumbnail.png)
+![elements](raw/master/category_thumbnails/default-thumbnail.png)
 
 ---
 ### events
-![events](default-thumbnail.png)
+![events](raw/master/category_thumbnails/default-thumbnail.png)
 
 ---
 ### expert
-![expert](default-thumbnail.png)
+![expert](raw/master/category_thumbnails/default-thumbnail.png)
 
 ---
 ### good
-![good](default-thumbnail.png)
+![good](raw/master/category_thumbnails/default-thumbnail.png)
 
 ---
 ### kernel
-![kernel](default-thumbnail.png)
+![kernel](raw/master/category_thumbnails/default-thumbnail.png)
 
 ---
 ### manipulation
-![manipulation](default-thumbnail.png)
+![manipulation](raw/master/category_thumbnails/default-thumbnail.png)
 
 ---
 ### position
-![position](default-thumbnail.png)
+![position](raw/master/category_thumbnails/default-thumbnail.png)
 
 ---
 ### shapes
-![shapes](default-thumbnail.png)
+![shapes](raw/master/category_thumbnails/default-thumbnail.png)
 
 ---
 ### simple
-![simple](default-thumbnail.png)
+![simple](raw/master/category_thumbnails/default-thumbnail.png)
 
 ---
 ### styles
-![styles](default-thumbnail.png)
+![styles](raw/master/category_thumbnails/default-thumbnail.png)
 
