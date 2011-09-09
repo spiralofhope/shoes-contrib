@@ -5,7 +5,7 @@ My personal rules are:
 - Thumbnails do not have borders.  I will implement this with code.
 - Screenshots will be displayed in alpha-numeric order.
 
-
+# Build categories into github:pages - http://pages.github.com/
 # TODO:  Is there a simple 'reset' command, so I don't have to remember/execute a list of @object.remove ?
 # TODO:  When searching for tags, merge duplicate entries together
 # TODO:  When searching for tags, display the full keyword just like now, but bold the part of the keyword which is matched.
@@ -17,7 +17,6 @@ My personal rules are:
 # TODO:  Complex searches of multiple mixed types.  tag: foo, content: bar, name: baz
 # FIXME:  When I scroll down the categories list, pick something, scroll down, view something, I am pre-scrolled-down in the view of the program's code.  Hrmph.  Maybe I have to spawn a new window and then kill the previous one.
 # TODO:  When browsing:  main -> a category -> an item, ..  the 'back' should go back to the category view.  Right now it goes back to main.  That's too far.
-# FIXME/TODO:  Now that I've completed the basics, I can demonstrate the slowness of the way I'm doing things.  There are two solutions.  (1) Create a tag and categories cache system.  (2) Don't immediately react to keypress().
 # TODO:  :margin_bottom => 5 on all the relevant stuff.
 =end
 
@@ -98,15 +97,15 @@ def rebuild()
   }
 end
 
-def thumbnail( p )
+def thumbnail( directory )
   # TODO:  This is a cumbersome way to do this.
   # TODO:  What image file types does Shoes support?
   i = ""
   f = File.join( 'default-thumbnail.png' )
   i = f if File.exists?( f )
-  f = File.join( p, "thumbnail.png" )
+  f = File.join( directory, "thumbnail.png" )
   i = f if File.exists?( f )
-  f = File.join( p, "thumbnail.jpg" )
+  f = File.join( directory, "thumbnail.jpg" )
   i = f if File.exists?( f )
   # If the default thumbnail doesn't actually exist, then this would gracefully default to painting an empty space of the appropriate size (150 x 150px, margins, etc).
   image(
@@ -116,40 +115,40 @@ def thumbnail( p )
     :margin_left => 10,
     :margin_bottom => 5,
     :margin_top => 5
-  ).click{ display_program( p ) }
+  ).click{ display_program( directory ) }
 end
 
-def content( p, *splat )
+def content( directory, *splat )
   if splat != [] then
     tags = splat[0]
     tags = " (#{ tags.to_s })"
-    tags = '' if p == splat[0]
+    tags = '' if directory == splat[0]
   end
   @content.append do
     flow( :margin_top => 10 ) do
     background( lightyellow, :curve => 10, :margin_left => 5, :margin_right => 20 )
       stack( width: 150 ) do
         #para  # Blank line above the thumbnail.
-        thumbnail( p )
+        thumbnail( directory )
       end
       flow( width: width-150 ) do
-        para( link( p ){ display_program( p ) }, tags, "\n" )
+        para( link( directory ){ display_program( directory ) }, tags, "\n" )
         # TODO:  How would I have this text be on the same line as the program name (the line above this one) and be right-aligned?
         button "Run" do
-          program_run( p )
+          program_run( directory )
         end
         button "Edit" do
-          editor( p )
+          editor( directory )
         end
         # FIXME:  This text needs a right margin.  I can't find the documentation for that.  (RE-TEST)
-        para( program_description( p ) )
+        para( program_description( directory ) )
       end
     end
   end
 end
 
-def program_run( p )
-  eval( File.open( File.join( p, "#{ p }.rb" ) ).read, TOPLEVEL_BINDING )
+def program_run( directory )
+  eval( File.open( File.join( directory, "#{ directory }.rb" ) ).read, TOPLEVEL_BINDING )
 end
 
 def display_search( string )
@@ -175,38 +174,39 @@ def display_search( string )
   }
 end # display_search( string )
 
-# TODO:  Do categories need thumbnails?
-def display_a_category( c )
+# TODO:  Category thumbnails.
+def display_a_category( category_name )
   @content.clear
   @content.append do
     flow( :margin_left => 10 ){
       para(
         back_to_main(),
-        strong( " #{ c }" )
+        strong( " #{ category_name }" )
       )
     }
   end
   # display all programs of category c
   @@categories_hash.each_key{ |k|
     @@categories_hash[k].each{ |v|
-      if /#{ c }/ =~ v
+      if /#{ category_name }/ =~ v
         content( k )
       end
     }
   }
-end
+end # display_a_category( category_name )
 
 # TODO:  Category thumbnails would look nice.
-def category( c )
+def category( category_name )
+p category_name
   @content.append do
     flow( :margin_top => 10, :margin_left => 5 ) do
       background( lightyellow, :curve => 10, :margin_left => 5, :margin_right => 20 )
       stack( :margin_left => 5 ) do
-        para( link( c ){ display_a_category( c ) } )
+        para( link( category_name ){ display_a_category( category_name ) } )
       end
     end
   end
-end # category( c, *splat )
+end # category( category_name, *splat )
 
 def display_categories_list()
   @content.clear
@@ -278,7 +278,7 @@ def program_description( program_directory )
   return 'aaaaa ' * 20
 end # program_description( program_directory )
 
-def display_program( program_directory )
+def display_program( directory )
   @search.remove
   @search_button.remove
   @content.remove
@@ -286,17 +286,17 @@ def display_program( program_directory )
     background( lightyellow, :curve => 10, :margin_left => 5, :margin_right => 20, :margin_top => 5 )
     stack( :margin_left => 10, :margin_top => 5, :margin_right => 20, :margin_top => 5 ){
       para( back_to_main() )
-      title( program_directory )
+      title( directory )
       button "Run" do
-        program_run( program_directory )
+        program_run( directory )
       end
     }
     stack( :margin_left => 20 ){
-    thumbnail( program_directory )
-    para( program_contents( program_directory ) )
+    thumbnail( directory )
+    para( program_contents( directory ) )
     }
   }
-end # display_program( program_directory )
+end # display_program( directory )
 
 Shoes.app(
             :title => "Program Browser",
@@ -304,7 +304,7 @@ Shoes.app(
             :height => 460,
             :resizeable => true
           ) do
-  alert "This is a pre-release version.\n\nThere are known bugs and a large to do list.  Read the code for details.\n\n- tags searching is very slow, for now"
+  alert "This is a pre-release version.\n\nThere are known bugs and a large to do list.  Read the code for details."
   background( darkgray )
   rebuild()
   main()

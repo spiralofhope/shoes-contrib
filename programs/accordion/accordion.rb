@@ -1,4 +1,4 @@
-# tags: text animation
+# tags: text animation, FIXME
 # categories: simple
 
 module Accordion
