@@ -196,7 +196,7 @@ def display_a_category( category_name )
   @content.append do
     flow( :margin_left => 10 ){
       para(
-        back_to_main(),
+        link( 'Back' ){ back_to_main() },
         strong( " #{ category_name }" )
       )
     }
@@ -212,6 +212,7 @@ def display_a_category( category_name )
 end # display_a_category( category_name )
 
 def category( category_name )
+  @category = ''
   @content.append do
     flow( :margin_top => 10 ) do
       background( lightyellow, :curve => 10, :margin_left => 5, :margin_right => 20 )
@@ -266,12 +267,10 @@ def main()
 end # main()
 
 def back_to_main()
-  link( 'Back' ){
-    @content.remove
-    @search.remove
-    @search_button.remove
-    main()
-  }
+  @content.remove
+  @search.remove
+  @search_button.remove
+  main()
 end
 
 # TODO:  Syntax highlighting.  Somehow.
@@ -323,7 +322,8 @@ def rebuild_readme()
   string = file_read( filename )
   @@categories_array.each{ |e|
     # Header
-    a = "\n\n---\n## #{ e }\n"
+    # On Github, <h2> ( ## string ) adds a horizontal rule above itself.
+    a = "\n\n## #{ e }\n"
     # Image
     i = File.join( '..', 'default-thumbnail.png' )
     dir = File.join( '..', 'categories' )
@@ -387,6 +387,14 @@ Shoes.app(
     if @search.inspect != nil then
       if key.inspect == ':escape' then
         @search.text = ''
+      end
+    end
+    #
+    # Category View
+    #
+    if @category.inspect != nil then
+      if key.inspect == ':backspace' then
+        back_to_main()
       end
     end
     #

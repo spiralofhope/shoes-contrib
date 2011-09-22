@@ -47,59 +47,45 @@ TODO `simple/video.rb` doesn't work.  It's probably referencing online data whic
 -->
 
 
----
 ## animation
 ![animation](https://github.com/spiralofhope/shoes-contrib/raw/master/categories/animation.png)
 
----
 ## apps
 ![apps](https://github.com/spiralofhope/shoes-contrib/raw/master/categories/default-thumbnail.png)
 
----
 ## art
 ![art](https://github.com/spiralofhope/shoes-contrib/raw/master/categories/default-thumbnail.png)
 
----
 ## basic
 ![basic](https://github.com/spiralofhope/shoes-contrib/raw/master/categories/default-thumbnail.png)
 
----
 ## elements
 ![elements](https://github.com/spiralofhope/shoes-contrib/raw/master/categories/default-thumbnail.png)
 
----
 ## events
 ![events](https://github.com/spiralofhope/shoes-contrib/raw/master/categories/default-thumbnail.png)
 
----
 ## expert
 ![expert](https://github.com/spiralofhope/shoes-contrib/raw/master/categories/default-thumbnail.png)
 
----
 ## good
 ![good](https://github.com/spiralofhope/shoes-contrib/raw/master/categories/default-thumbnail.png)
 
----
 ## kernel
 ![kernel](https://github.com/spiralofhope/shoes-contrib/raw/master/categories/default-thumbnail.png)
 
----
 ## manipulation
 ![manipulation](https://github.com/spiralofhope/shoes-contrib/raw/master/categories/default-thumbnail.png)
 
----
 ## position
 ![position](https://github.com/spiralofhope/shoes-contrib/raw/master/categories/default-thumbnail.png)
 
----
 ## shapes
 ![shapes](https://github.com/spiralofhope/shoes-contrib/raw/master/categories/default-thumbnail.png)
 
----
 ## simple
 ![simple](https://github.com/spiralofhope/shoes-contrib/raw/master/categories/default-thumbnail.png)
 
----
 ## styles
 ![styles](https://github.com/spiralofhope/shoes-contrib/raw/master/categories/default-thumbnail.png)
 
