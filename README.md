@@ -66,26 +66,26 @@ TODO `simple/video.rb` doesn't work.  It's probably referencing online data whic
 ![events](https://github.com/spiralofhope/shoes-contrib/raw/master/categories/events.png)
 
 ## expert
-![expert](https://github.com/spiralofhope/shoes-contrib/raw/master/categories/default-thumbnail.png)
+![expert](https://github.com/spiralofhope/shoes-contrib/raw/master/categories/expert.png)
 
 ## good
-![good](https://github.com/spiralofhope/shoes-contrib/raw/master/categories/default-thumbnail.png)
+![good](https://github.com/spiralofhope/shoes-contrib/raw/master/categories/good.png)
 
 ## kernel
-![kernel](https://github.com/spiralofhope/shoes-contrib/raw/master/categories/default-thumbnail.png)
+![kernel](https://github.com/spiralofhope/shoes-contrib/raw/master/categories/kernel.png)
 
 ## manipulation
-![manipulation](https://github.com/spiralofhope/shoes-contrib/raw/master/categories/default-thumbnail.png)
+![manipulation](https://github.com/spiralofhope/shoes-contrib/raw/master/categories/manipulation.png)
 
 ## position
-![position](https://github.com/spiralofhope/shoes-contrib/raw/master/categories/default-thumbnail.png)
+![position](https://github.com/spiralofhope/shoes-contrib/raw/master/categories/position.png)
 
 ## shapes
-![shapes](https://github.com/spiralofhope/shoes-contrib/raw/master/categories/default-thumbnail.png)
+![shapes](https://github.com/spiralofhope/shoes-contrib/raw/master/categories/shapes.png)
 
 ## simple
-![simple](https://github.com/spiralofhope/shoes-contrib/raw/master/categories/default-thumbnail.png)
+![simple](https://github.com/spiralofhope/shoes-contrib/raw/master/categories/simple.png)
 
 ## styles
-![styles](https://github.com/spiralofhope/shoes-contrib/raw/master/categories/default-thumbnail.png)
+![styles](https://github.com/spiralofhope/shoes-contrib/raw/master/categories/styles.png)
 

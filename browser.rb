@@ -21,82 +21,129 @@ My personal rules are:
 # TODO:  hotkeys: Pageup/pagedown and space.
 =end
 
-# This is a little specific.. needs fallbacks and preferences.
-# TODO:  Implement a configuration GUI, and store preferences in a plain text file (that's excluded from github)
-def editor( filename )
-  filename = File.join( filename, filename + '.rb' )
-  system( '/usr/bin/geany', filename )
-  rebuild()
-end
+# FIXME:  There are a bunch of solutions for this, but I didn't want to deal with any of it.  Consider investigating something philosophically superior.
+$LOAD_PATH << './lib'
+require 'lib-browser.rb'
 
-def get_list( p, rx )
-  file = File.join( p, "#{ p }.rb" )
+#
+# 0 - The list of categories.
+def main()
+  # TODO:  Can I  have the cursor automatically placed in the edit_line when the program launches?  Maybe toss a tab character at the keyboard?
+  # @self.width doesn't understand a scroll bar!  TODO:  How can I know if a scroll bar is being painted or not?  How do I know the size of a scroll bar?
+  @search = (
+      # How can I have edit_line understand the proposed width of the button and adjust accordingly?
+      edit_line( :width => self.width - 66, :margin_left => 10, :margin_top => 5 )
+  )
+  @search_button = (
+    button( 'x', :margin_top => 5 ){ @search.text = '' }
+  )
   #
-  return [ p ] if ! File.exists?( file )
+  @content = flow{}
+  #view_all()
+  view_categories_list()
   #
-  f = File.open( file, 'r' )
-    file_contents = f.read
-  f.close
-  file_contents.each_line{ |l|
-    if l.match( rx ) != nil then
-      tags = l[$~[0].length..-1].lstrip
-      tags = tags.split( ',' )
-      tags.each_index{ |e|
-        tags[e].lstrip!
-        tags[e].rstrip!
-      }
-      tags[-1].chomp!
-      return tags
+  @search.change do |s|
+    if s.text.empty?
+      #view_all()
+      view_categories_list()
+    else
+      view_search( s.text )
     end
+  end
+  #
+end # main()
+
+#
+# 1 - This is the first thing that the user sees.
+def view_categories_list()
+  @content.clear
+  @@categories_array.each{ |c|
+    view_category_summary( c )
   }
-  return [p]
-end
+end # view_categories_list()
 
-def program_tags( p )
-  return get_list( p, %r{^(# tags:)}i )
-end
+def view_category_summary( category_name )
+  @category = ''
+  @content.append do
+    flow( :margin_top => 10 ) do
+      background( lightyellow, :curve => 10, :margin_left => 5, :margin_right => 20 )
+      stack( width: 150 ) do
+        #para  # Blank line above the thumbnail.
+        catgegory_thumbnail( category_name )
+      end
+      flow( width: width-150 ) do
+        para( link( category_name ){ view_a_category( category_name ) } )
+      end
+    end
+  end
+end # view_category_summary( category_name, *splat )
 
-def program_categories( p )
-  return get_list( p, %r{^(# categories:)}i )
-end
+# This is largely cloned from program_thumbnail(), above.
+def catgegory_thumbnail( category_name )
+  dir = File.join( '..', 'categories' )
+  i = File.join( '..', 'categories', 'default-thumbnail.png' )
+  f = File.join( dir, "#{ category_name }.png" )
+  i = f if File.exists?( f )
+  f = File.join( dir, "#{ category_name }.jpg" )
+  i = f if File.exists?( f )
+  image(
+    i,
+    width: 150,
+    height: 150,
+    :margin_left => 10,
+    :margin_bottom => 5,
+    :margin_top => 5
+  ).click{ view_a_category( category_name ) }
+end # catgegory_thumbnail( category_name )
 
-def rebuild()
-  # This ignores dot directories.
-  Dir.chdir( 'programs' )
-  @@programs = Dir.glob( '*' )
-  @@programs.delete_if { |x| File.ftype( x ) != 'directory' }
-  @@programs.sort!
+def program_run( directory )
+  eval( File.open( File.join( directory, "#{ directory }.rb" ) ).read, TOPLEVEL_BINDING )
+end # program_run( directory )
 
-  @@tags_hash = Hash.new
-  @@tags_array = Array.new
-  @@programs.each{ |p|
-    tags = program_tags( p )
-    @@tags_hash["#{ p }"] = Array.new
-    tags.each{ |k|
-      @@tags_hash["#{ p }"] << k
-      @@tags_array << k
+def view_search( string )
+  @content.clear
+  # A basic limitation since a one or two-character search is too aggressive and not actually useful.
+  return '' if string.length < 3
+  view_search_hash = Hash.new
+  @@tags_hash.each_key{ |k|
+    view_search_hash["#{ k }"] = Array.new
+    @@tags_hash[k].each{ |v|
+      view_search_hash["#{ k }"] << v if /#{ string }/ =~ v
     }
   }
-  @@tags_array.sort!
-  @@tags_array.uniq!
+  view_search_hash.delete_if{ |k,v|
+    view_search_hash[k] == []
+  }
+  view_search_hash.each_key{ |k|
+    s = ''
+    view_search_hash[k].each{ |v|
+      s << v
+    }
+    view_program_summary( k, s )
+  }
+end # view_search( string )
 
-  @@categories_hash = Hash.new
-  @@categories_array = Array.new
-  @@programs.each{ |p|
-    categories = program_categories( p )
-    @@categories_hash["#{ p }"] = Array.new
-    categories.each{ |k|
-      @@categories_hash["#{ p }"] << k
-      @@categories_array << k if k != p
+#
+# 2 - Clicking on a category
+def view_a_category( category_name )
+  @content.clear
+  @content.append do
+    flow( :margin_left => 10 ){
+      para(
+        link( 'Back' ){ back_to_main() },
+        strong( " #{ category_name }" )
+      )
+    }
+  end
+  # display all programs of category c
+  @@categories_hash.each_key{ |k|
+    @@categories_hash[k].each{ |v|
+      if /#{ category_name }/ =~ v
+        view_program_summary( k )
+      end
     }
   }
-  @@categories_array.sort!
-  @@categories_array.uniq!
-  # TODO:  This can probably be built into the initial hash assembly, above.  I'm just not so sure how to do that right now..
-  @@categories_hash.delete_if{ |key,value|
-    key == value[0]
-  }
-end
+end # view_a_category( category_name )
 
 def program_thumbnail( directory )
   # TODO:  This is a cumbersome way to do this.
@@ -115,28 +162,19 @@ def program_thumbnail( directory )
     :margin_left => 10,
     :margin_bottom => 5,
     :margin_top => 5
-  ).click{ display_program( directory ) }
-end
+  ).click{ view_program( directory ) }
+end # program_thumbnail( directory )
 
-# This is largely cloned from program_thumbnail(), above.
-def catgegory_thumbnail( category_name )
-  dir = File.join( '..', 'categories' )
-  i = File.join( '..', 'categories', 'default-thumbnail.png' )
-  f = File.join( dir, "#{ category_name }.png" )
-  i = f if File.exists?( f )
-  f = File.join( dir, "#{ category_name }.jpg" )
-  i = f if File.exists?( f )
-  image(
-    i,
-    width: 150,
-    height: 150,
-    :margin_left => 10,
-    :margin_bottom => 5,
-    :margin_top => 5
-  ).click{ display_a_category( category_name ) }
-end
+def back_to_main()
+  @content.remove
+  @search.remove
+  @search_button.remove
+  main()
+end # back_to_main()
 
-def content( directory, *splat )
+#
+# 3 - Clicking on a program
+def view_program_summary( directory, *splat )
   if splat != [] then
     tags = splat[0]
     tags = " (#{ tags.to_s })"
@@ -150,7 +188,7 @@ def content( directory, *splat )
         program_thumbnail( directory )
       end
       flow( width: width-150 ) do
-        para( link( directory ){ display_program( directory ) }, tags, "\n" )
+        para( link( directory ){ view_program( directory ) }, tags, "\n" )
         # TODO:  How would I have this text be on the same line as the program name (the line above this one) and be right-aligned?
         button "Run" do
           program_run( directory )
@@ -163,116 +201,7 @@ def content( directory, *splat )
       end
     end
   end
-end
-
-def program_run( directory )
-  eval( File.open( File.join( directory, "#{ directory }.rb" ) ).read, TOPLEVEL_BINDING )
-end
-
-def display_search( string )
-  @content.clear
-  # A basic limitation since a one or two-character search is too aggressive and not actually useful.
-  return '' if string.length < 3
-  display_search_hash = Hash.new
-  @@tags_hash.each_key{ |k|
-    display_search_hash["#{ k }"] = Array.new
-    @@tags_hash[k].each{ |v|
-      display_search_hash["#{ k }"] << v if /#{ string }/ =~ v
-    }
-  }
-  display_search_hash.delete_if{ |k,v|
-    display_search_hash[k] == []
-  }
-  display_search_hash.each_key{ |k|
-    s = ''
-    display_search_hash[k].each{ |v|
-      s << v
-    }
-    content( k, s )
-  }
-end # display_search( string )
-
-def display_a_category( category_name )
-  @content.clear
-  @content.append do
-    flow( :margin_left => 10 ){
-      para(
-        link( 'Back' ){ back_to_main() },
-        strong( " #{ category_name }" )
-      )
-    }
-  end
-  # display all programs of category c
-  @@categories_hash.each_key{ |k|
-    @@categories_hash[k].each{ |v|
-      if /#{ category_name }/ =~ v
-        content( k )
-      end
-    }
-  }
-end # display_a_category( category_name )
-
-def category( category_name )
-  @category = ''
-  @content.append do
-    flow( :margin_top => 10 ) do
-      background( lightyellow, :curve => 10, :margin_left => 5, :margin_right => 20 )
-      stack( width: 150 ) do
-        #para  # Blank line above the thumbnail.
-        catgegory_thumbnail( category_name )
-      end
-      flow( width: width-150 ) do
-        para( link( category_name ){ display_a_category( category_name ) } )
-      end
-    end
-  end
-end # category( category_name, *splat )
-
-def display_categories_list()
-  @content.clear
-  @@categories_array.each{ |c|
-    category( c )
-  }
-end # display_categories_list()
-#def display_all()
-  #@content.clear
-  #@@programs.each do |p|
-    #content( p )
-  #end
-#end # display_all()
-
-def main()
-  # TODO:  Can I  have the cursor automatically placed in the edit_line when the program launches?  Maybe toss a tab character at the keyboard?
-  # @self.width doesn't understand a scroll bar!  TODO:  How can I know if a scroll bar is being painted or not?  How do I know the size of a scroll bar?
-  @search = (
-      # How can I have edit_line understand the proposed width of the button and adjust accordingly?
-      edit_line( :width => self.width - 66, :margin_left => 10, :margin_top => 5 )
-  )
-  @search_button = (
-    button( 'x', :margin_top => 5 ){ @search.text = '' }
-  )
-  #
-  @content = flow{}
-  #display_all()
-  display_categories_list()
-  #
-  @search.change do |s|
-    if s.text.empty?
-      #display_all()
-      display_categories_list()
-    else
-      display_search( s.text )
-    end
-  end
-  #
-end # main()
-
-def back_to_main()
-  @content.remove
-  @search.remove
-  @search_button.remove
-  main()
-end
+end # view_program_summary( directory, *splat )
 
 # TODO:  Syntax highlighting.  Somehow.
 def program_contents( program_directory )
@@ -296,7 +225,7 @@ def program_description( program_directory )
   return 'aaaaa ' * 20
 end # program_description( program_directory )
 
-def display_program( directory )
+def view_program( directory )
   @search.remove
   @search_button.remove
   @content.remove
@@ -314,59 +243,7 @@ def display_program( directory )
     para( program_contents( directory ) )
     }
   }
-end # display_program( directory )
-
-# TODO:  Left-align the image, and have the category text on the right to the top.
-# TODO:  Category text:  categories/name.txt
-def rebuild_readme()
-  filename = File.join( '..', 'README.md.prepend' )
-  string = file_read( filename )
-  @@categories_array.each{ |e|
-    # Header
-    # On Github, <h2> ( ## string ) adds a horizontal rule above itself.
-    a = "\n\n## #{ e }\n"
-    # Image
-    i = File.join( '..', 'default-thumbnail.png' )
-    dir = File.join( '..', 'categories' )
-    #
-    f = File.join( dir, "#{ e }.png" )
-    i = f if File.exists?( f )
-    f = File.join( dir, "#{ e }.jpg" )
-    i = f if File.exists?( f )
-    i = i.split( File::Separator )[-1]
-    #i = i[1..-1].join( '/' )
-    # FIXME:  An absolute path like this will break mirrors.  Make it relative.
-    i = 'https://github.com/spiralofhope/shoes-contrib/raw/master/categories/'.concat( i )
-    #
-    a.concat( "![#{ e }](#{ i })" )
-    #
-    string.concat( a )
-  }
-  string.concat( "\n\n" )
-  filename = File.join( '..', 'README.md' )
-  file_create( filename, string )
-end
-
-def file_create(
-                  file,
-                  file_contents=''
-                )
-  File.open( file, 'w+' ) { |f| # open file for update
-    f.print file_contents       # write out the example description
-  }                             # file is automatically closed
-end
-
-def file_read( file )
-  # I suspect that there are issues reading files with a space in them.  I'm having a hard time tracking it down though.. TODO: I should adjust the test case.
-  if ! File.exists?( file ) then
-    puts "That file doesn't exist:  '#{ file.inspect }'"
-    return
-  end
-  f = File.open( file, 'r' )
-    string = f.read
-  f.close
-  return string
-end
+end # view_program( directory )
 
 Shoes.app(
             :title => "Program Browser",
@@ -403,4 +280,4 @@ Shoes.app(
     #
     exit if key.inspect == ':control_q' and confirm( "Quit?" )
   end
-end
+end # Shoes.app( ...
