@@ -18,6 +18,7 @@ My personal rules are:
 # FIXME:  When I scroll down the categories list, pick something, scroll down, view something, I am pre-scrolled-down in the view of the program's code.  Hrmph.  Maybe I have to spawn a new window and then kill the previous one.
 # TODO:  When browsing:  main -> a category -> an item, ..  the 'back' should go back to the category view.  Right now it goes back to main.  That's too far.
 # TODO:  :margin_bottom => 5 on all the relevant stuff.
+# TODO:  hotkeys: Pageup/pagedown and space.
 =end
 
 # This is a little specific.. needs fallbacks and preferences.

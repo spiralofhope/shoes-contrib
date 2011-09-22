@@ -51,19 +51,19 @@ TODO `simple/video.rb` doesn't work.  It's probably referencing online data whic
 ![animation](https://github.com/spiralofhope/shoes-contrib/raw/master/categories/animation.png)
 
 ## apps
-![apps](https://github.com/spiralofhope/shoes-contrib/raw/master/categories/default-thumbnail.png)
+![apps](https://github.com/spiralofhope/shoes-contrib/raw/master/categories/apps.png)
 
 ## art
-![art](https://github.com/spiralofhope/shoes-contrib/raw/master/categories/default-thumbnail.png)
+![art](https://github.com/spiralofhope/shoes-contrib/raw/master/categories/art.png)
 
 ## basic
-![basic](https://github.com/spiralofhope/shoes-contrib/raw/master/categories/default-thumbnail.png)
+![basic](https://github.com/spiralofhope/shoes-contrib/raw/master/categories/basic.png)
 
 ## elements
-![elements](https://github.com/spiralofhope/shoes-contrib/raw/master/categories/default-thumbnail.png)
+![elements](https://github.com/spiralofhope/shoes-contrib/raw/master/categories/elements.png)
 
 ## events
-![events](https://github.com/spiralofhope/shoes-contrib/raw/master/categories/default-thumbnail.png)
+![events](https://github.com/spiralofhope/shoes-contrib/raw/master/categories/events.png)
 
 ## expert
 ![expert](https://github.com/spiralofhope/shoes-contrib/raw/master/categories/default-thumbnail.png)
