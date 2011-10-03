@@ -18,6 +18,27 @@ My personal rules are:
 
 Program changes:
 
+  TODO  screenshotting support
+          http://www.mail-archive.com/shoes@code.whytheluckystiff.net/msg02781.html
+
+          If you are using Shoes 3 for Windows, try out the following.
+          Red Shoes will save a snapshot into drawing.pdf file.
+
+          Shoes.app do
+            flag = nil
+            motion do |x, y|
+              b, x, y = mouse
+              line @x, @y, x, y if b == 1
+              @x, @y = x, y
+            end
+            button 'Take a snapshot' do
+              _snapshot filename: './drawing.pdf', format: :pdf
+            end
+          end
+
+          But this _snapshot() method is a trial. It's not always work good and doesn't
+          work on other platforms so far, neither on Green Shoes. 
+
   TODO  Build categories into 'github:pages' - http://pages.github.com/
 
   TODO  Is there a simple 'reset' command, so I don't have to remember/execute a list of @object.remove ?
@@ -28,7 +49,8 @@ Program changes:
 
   TODO  Implement regular expressions in the search field?
 
-  TODO  Don't ever remove what was typed in the search field.  So when viewing a program, and the user goes back.. it returns to the previous state exactly.
+  TODO  Don't ever remove what was typed in the search field.
+          So when viewing a program, and the user goes back.. it returns to the previous state exactly.
 
   TODO  Media gallery.  (texts, images, videos)
 
