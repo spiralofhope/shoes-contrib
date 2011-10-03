@@ -78,7 +78,7 @@ end
 # TODO:  Left-align the image, and have the category text on the right to the top.
 # TODO:  Category text:  categories/name.txt
 def rebuild_readme()
-  filename = File.join( '..', 'README.markdown.prepend' )
+  filename = File.join( '..', 'lib', 'README.markdown.prepend' )
   string = file_read( filename )
   @@categories_array.each{ |e|
     # Header
