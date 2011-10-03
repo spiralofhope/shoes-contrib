@@ -5,20 +5,32 @@ My personal rules are:
 - Thumbnails do not have borders.  I will implement this with code.
 - Screenshots will be displayed in alpha-numeric order.
 
-# Build categories into github:pages - http://pages.github.com/
-# TODO:  Is there a simple 'reset' command, so I don't have to remember/execute a list of @object.remove ?
-# TODO:  When searching for tags, merge duplicate entries together
-# TODO:  When searching for tags, display the full keyword just like now, but bold the part of the keyword which is matched.
-# TODO:  Implement regular expressions in the search field?
-# TODO:  Don't ever remove what was typed in the search field.  So when viewing a program, and the user goes back.. it returns to the previous state exactly.
-# TODO:  Media gallery.  (texts, images, videos)
-# TODO:  Be able to search within content.
-# TODO:  Be able to search by name.
-# TODO:  Complex searches of multiple mixed types.  tag: foo, content: bar, name: baz
-# FIXME:  When I scroll down the categories list, pick something, scroll down, view something, I am pre-scrolled-down in the view of the program's code.  Hrmph.  Maybe I have to spawn a new window and then kill the previous one.
-# TODO:  When browsing:  main -> a category -> an item, ..  the 'back' should go back to the category view.  Right now it goes back to main.  That's too far.
-# TODO:  :margin_bottom => 5 on all the relevant stuff.
-# TODO:  hotkeys: Pageup/pagedown and space.
+TODO:  Build categories into github:pages - http://pages.github.com/
+TODO:  Is there a simple 'reset' command, so I don't have to remember/execute a list of @object.remove ?
+TODO:  When searching for tags, merge duplicate entries together
+TODO:  When searching for tags, display the full keyword just like now, but bold the part of the keyword which is matched.
+TODO:  Implement regular expressions in the search field?
+TODO:  Don't ever remove what was typed in the search field.  So when viewing a program, and the user goes back.. it returns to the previous state exactly.
+TODO:  Media gallery.  (texts, images, videos)
+TODO:  Be able to search within content.
+TODO:  Be able to search by name.
+TODO:  Complex searches of multiple mixed types.  tag: foo, content: bar, name: baz
+FIXME:  When I scroll down the categories list, pick something, scroll down, view something, I am pre-scrolled-down in the view of the program's code.  Hrmph.  Maybe I have to spawn a new window and then kill the previous one.
+TODO:  When browsing:  main -> a category -> an item, ..  the 'back' should go back to the category view.  Right now it goes back to main.  That's too far.
+TODO:  :margin_bottom => 5 on all the relevant stuff.
+TODO:  hotkeys: Pageup/pagedown and space.
+
+
+TODO `animation/pulsate.rb` references an image that doesn't exist.
+TODO `app/download-and-save.rb` references an image that should be locally cached and another that doesn't exist.
+TODO `basic/class-book.rb` doesn't run.
+TODO `basic/url-shoes-subclassing.rb` doesn't run.
+TODO `elements/image-icon.rb` references an image which should be locally cached.
+TODO `expert/funnies.rb` doesn't work.  It's probably referencing online data which doesn't exist.
+TODO `kernel/debug.rb` doesn't work.
+TODO `simple/bounce.rb` references images which don't exist.
+TODO `simple/form.rb` references images which don't exist.
+TODO `simple/video.rb` doesn't work.  It's probably referencing online data which doesn't exist.
 =end
 
 # FIXME:  There are a bunch of solutions for this, but I didn't want to deal with any of it.  Consider investigating something philosophically superior.

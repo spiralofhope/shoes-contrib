@@ -2,49 +2,77 @@
      _  (/   ___ _  _     _  _____  _/_ __     (/_
     /_)_/ )_(_)_(/_/_)_  (__(_) / (_(__/ (__(_/_) 
                                                
-# Welcome to Shoes-Contrib
+# Welcome to shoes-contrib!
 
-You've found the shoes-contrib project.
+You've found
+[spiralofhope's](http://spiralofhope.com)
+fork of
+[the shoes-contrib project](https://github.com/shoes/shoes-contrib)
+.
 
 ## What is shoes-contrib?
 
-Shoes-contrib is a collection of examples for [Shoes](http://shoesrb.com/),
-the best little GUI toolkit for Ruby. We've packaged up a bunch of great
-little scripts to show off different parts of Shoes, so if you're looking
-to tinker around, need to find an example of some part of the api, or just
-want to see what Shoes can do, you're in the right place!
+Shoes-contrib is a collection of examples for 
+[Shoes](http://shoesrb.com/)
+, the best little GUI toolkit for Ruby. 
+
+We packaged up a bunch of great little scripts to show off different 
+parts of Shoes, so if you're looking to tinker around, need to find an 
+example of some part of the API, or just want to see what Shoes can do, 
+you're in the right place!
 
 ## How can I try the examples out?
 
-If you'd like to give a specific example a shot, you can just copy any of
-the examples into a file, and open them with Shoes. Easy peasy!
+If you'd like to give a specific example a shot, you can just copy any 
+of the examples into a file, and open that file with Shoes. Easy peasy!
 
-If you'd like to try out a bunch of examples, you can open the [browser.rb](http://github.com/shoes/shoes-contrib/blob/master/browser.rb)
-file with Shoes, and it'll give you a little app that opens any of the other
+- [download the full shoes-contrib project](https://github.com/spiralofhope/shoes-contrib/archives/master)
+- [View a program](https://github.com/spiralofhope/shoes-contrib/tree/master/programs)
+-- For example, [circles.rb](https://github.com/spiralofhope/shoes-contrib/blob/master/programs/circles/circles.rb)
+
+If you'd like to try out a bunch of examples, you can 
+[download the full shoes-contrib project](https://github.com/spiralofhope/shoes-contrib/archives/master)
+, open
+[browser.rb](http://github.com/shoes/shoes-contrib/blob/master/browser.rb)
+with Shoes, and it'll give you a little app that opens any of the other
 examples, perfect for playing with a few of them!
 
-## How can I contribute?
+## How can I contribute my own program?
 
-If you've got any fun examples with Shoes, please fork the repo, add them, and
-send us a pull request! Bonus points for smaller examples, ones with comments,
-and screenshots of your example in action.
+*Fork the project*
+
+The best way is to
+[fork](http://help.github.com/fork-a-repo/)
+[this project](https://github.com/spiralofhope/shoes-contrib)
+, and add your example in the `programs/` directory.
+
+Look at any other program for an idea of how they are created.  Don't 
+forget to add your `tags` and `categories` keywords.  Talk with me before 
+defining a new category keyword.
+
+*Contact me*
+
+You can also 
+[contact me](http://spiralofhope.com/contact-me.html) 
+directly to have your addition made.
+
+## How can I contribute to the project?
+
+[Create a free GitHub account](https://github.com/signup/free)
+, then 
+[fork](http://help.github.com/fork-a-repo/) 
+[this project](https://github.com/spiralofhope/shoes-contrib)
 
 ## I have a question!
 
-If something's not clear, just send an email to the shoes mailing list, shoes@librelist.com, and we'll straighten things out. Or, hop on #shoes on Freenode, if you're into that whole IRC thing.
+If something's not clear, there are a bunch of ways to get a hold of
+someone to help.
 
-<!--
-TODO `animation/pulsate.rb` references an image that doesn't exist.
-TODO `app/download-and-save.rb` references an image that should be locally cached and another that doesn't exist.
-TODO `basic/class-book.rb` doesn't run.
-TODO `basic/url-shoes-subclassing.rb` doesn't run.
-TODO `elements/image-icon.rb` references an image which should be locally cached.
-TODO `expert/funnies.rb` doesn't work.  It's probably referencing online data which doesn't exist.
-TODO `kernel/debug.rb` doesn't work.
-TODO `simple/bounce.rb` references images which don't exist.
-TODO `simple/form.rb` references images which don't exist.
-TODO `simple/video.rb` doesn't work.  It's probably referencing online data which doesn't exist.
--->
+# Send an email to the shoes mailing list, shoes@librelist.com
+#- Questions about shoes programming should go here.
+# Hop on [#shoes on Freenode](http://webchat.freenode.net/#shoes), if you're into that whole IRC thing.
+#- To get a person's attention, be sure to write out their full IRC name when you're first talking to them.
+# [Contact spiralofhope directly](http://spiralofhope.com/contact-me.html) 
 
 
 ## animation

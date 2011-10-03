@@ -79,6 +79,7 @@ end
 # TODO:  Category text:  categories/name.txt
 def rebuild_readme()
   filename = File.join( '..', 'lib', 'README.markdown.prepend' )
+  # This is bad on very large files, but should work fine for our purposes.
   string = file_read( filename )
   @@categories_array.each{ |e|
     # Header
