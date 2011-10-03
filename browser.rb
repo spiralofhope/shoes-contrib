@@ -1,36 +1,108 @@
 =begin
+
 My personal rules are:
-- Name categories with a plural.
-- Make tags with for both the singular and plural forms of a word, if possible.
-- Thumbnails do not have borders.  I will implement this with code.
-- Screenshots will be displayed in alpha-numeric order.
 
-TODO:  Build categories into github:pages - http://pages.github.com/
-TODO:  Is there a simple 'reset' command, so I don't have to remember/execute a list of @object.remove ?
-TODO:  When searching for tags, merge duplicate entries together
-TODO:  When searching for tags, display the full keyword just like now, but bold the part of the keyword which is matched.
-TODO:  Implement regular expressions in the search field?
-TODO:  Don't ever remove what was typed in the search field.  So when viewing a program, and the user goes back.. it returns to the previous state exactly.
-TODO:  Media gallery.  (texts, images, videos)
-TODO:  Be able to search within content.
-TODO:  Be able to search by name.
-TODO:  Complex searches of multiple mixed types.  tag: foo, content: bar, name: baz
-FIXME:  When I scroll down the categories list, pick something, scroll down, view something, I am pre-scrolled-down in the view of the program's code.  Hrmph.  Maybe I have to spawn a new window and then kill the previous one.
-TODO:  When browsing:  main -> a category -> an item, ..  the 'back' should go back to the category view.  Right now it goes back to main.  That's too far.
-TODO:  :margin_bottom => 5 on all the relevant stuff.
-TODO:  hotkeys: Pageup/pagedown and space.
+  - Name categories with a plural.
 
+  - Make tags with for both the singular and plural forms of a word, if possible.
 
-TODO `animation/pulsate.rb` references an image that doesn't exist.
-TODO `app/download-and-save.rb` references an image that should be locally cached and another that doesn't exist.
-TODO `basic/class-book.rb` doesn't run.
-TODO `basic/url-shoes-subclassing.rb` doesn't run.
-TODO `elements/image-icon.rb` references an image which should be locally cached.
-TODO `expert/funnies.rb` doesn't work.  It's probably referencing online data which doesn't exist.
-TODO `kernel/debug.rb` doesn't work.
-TODO `simple/bounce.rb` references images which don't exist.
-TODO `simple/form.rb` references images which don't exist.
-TODO `simple/video.rb` doesn't work.  It's probably referencing online data which doesn't exist.
+  - Thumbnails do not have borders.  I will implement this with code.
+
+  - Screenshots will be displayed in alpha-numeric order.
+
+  - I have a verbose coding style, with lots of extra spaces, for improved readability.
+
+  - Two-space tabs
+
+---
+
+Program changes:
+
+  TODO  Build categories into 'github:pages' - http://pages.github.com/
+
+  TODO  Is there a simple 'reset' command, so I don't have to remember/execute a list of @object.remove ?
+
+  TODO  When searching for tags, merge duplicate entries together
+
+  TODO  When searching for tags, display the full keyword just like now, but bold the part of the keyword which is matched.
+
+  TODO  Implement regular expressions in the search field?
+
+  TODO  Don't ever remove what was typed in the search field.  So when viewing a program, and the user goes back.. it returns to the previous state exactly.
+
+  TODO  Media gallery.  (texts, images, videos)
+
+  TODO  Be able to search within content.
+
+  TODO  Be able to search by name.
+
+  TODO  Complex searches of multiple mixed types.  tag: foo, content: bar, name: baz
+
+  FIXME  When I scroll down the categories list, pick something, scroll down, view something, I am pre-scrolled-down in the view of the program's code  Hrmph.  Maybe I have to spawn a new window and then kill the previous one.
+
+  TODO  When browsing:  main -> a category -> an item, ..  the 'back' should go back to the category view.  Right now it goes back to main.  That's too far.
+
+  TODO  :margin_bottom => 5 on all the relevant stuff.
+
+  TODO  hotkeys: Pageup/pagedown and space.
+
+  TODO  Implement green shoes functionality.
+      - Test browser.rb under green shoes.  If necessary, maintain two code bases for it.
+      - Create a separate tag for every program to flag it for whatever types of shoes it can be run under.
+      - Absorb the samples from https://github.com/ashbb/green_shoes/tree/master/samples, learning what changes were made.
+      - Create a red-to-green shoes tutorial, highlighting differences.  There are a lot of changes, and I don't think the authors really know them all.  =)
+
+---
+
+Other projects to absorb (once this one can properly support all the necessary functionality):
+
+  http://spiralofhope.com/shoes-tutorial.html
+  
+  http://shoesrb.com/tutorials
+  
+  http://shoesrb.com/manual/Hello.html
+  
+  https://github.com/shoes/shoes/tree/develop/samples
+  
+  http://the-shoebox.org
+  
+    Steve Klabnik is working on transferring the shoebox into his control.  Licensing for individual programs was never determined.  The website itself is MIT/BSD/Ruby licensed.
+  
+  http://shoes-tutorial-note.heroku.com
+  
+    forked: https://github.com/spiralofhope/shoes_tutorial_html
+
+---
+
+Problems with programs:
+
+  TODO  pulsate.rb
+          References an image that doesn't exist.
+  TODO  download-and-save.rb
+          References an image that should be locally cached and another that doesn't exist.
+  TODO  class-book.rb
+          Doesn't run.
+  TODO  url-shoes-subclassing.rb
+          Doesn't run.
+  TODO  image-icon.rb
+          References an image which should be locally cached.
+  TODO  funnies.rb
+          Doesn't work.  It's probably referencing online data which doesn't exist.
+  TODO  debug.rb
+          Doesn't work.
+  TODO  bounce.rb
+          References images which don't exist.
+  TODO  form.rb
+          References images which don't exist.
+  TODO  video.rb
+          Doesn't work.  It's probably referencing online data which doesn't exist.
+
+  Tag all programs with 'unreviewed' and then remove the tag after reviewing each one.  Each program can be edited one-by-one from within the browser itself, by searching for the unreviewed tag.
+
+    - Example / tutorial programs program should showcase only *one* feature and very clearly indicate it.  No other distracting features or functionality should exist!
+
+    - Push toward SSCCEs - http://sscce.org
+
 =end
 
 # FIXME:  There are a bunch of solutions for this, but I didn't want to deal with any of it.  Consider investigating something philosophically superior.

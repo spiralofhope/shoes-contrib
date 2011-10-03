@@ -13,9 +13,12 @@ You've found [spiralofhope](http://spiralofhope.com)'s fork of [the shoes-contri
 
 ## What is shoes-contrib?
 
-Shoes-contrib is a collection of examples for [Shoes](http://shoesrb.com/), the best little GUI toolkit for Ruby. 
+Shoes-contrib is a collection of examples for [Shoes](http://shoesrb.com/), the best little GUI toolkit for Ruby. (In our case it's the original Red Shoes)
 
 We packaged up a bunch of great little scripts to show off different parts of Shoes, so if you're looking to tinker around, need to find an example of some part of the API, or just want to see what Shoes can do, you're in the right place!
+
+
+Right now the project is focusing on its browser, but when it turns to the example programs and tutorials, they will be stripped down into[Short, Self Contained, Correct, Example](http://sscce.org/)s to make them as easy as possible to learn from.
 
 ## How can I try the examples out?
 
@@ -35,13 +38,15 @@ The best way is to [fork](http://help.github.com/fork-a-repo/) [this project](ht
 
 Look at any other program for an idea of how they are created.  Don't forget to add your `tags` and `categories` keywords.  Talk with me before defining a new category keyword.
 
-**Contact me**
+**Contact spiralofhope**
 
 You can also [contact me](http://spiralofhope.com/contact-me.html) directly to have your addition made.
 
 ## How can I contribute to the project?
 
-[Create a free GitHub account](https://github.com/signup/free), then [fork](http://help.github.com/fork-a-repo/) [this project](https://github.com/spiralofhope/shoes-contrib)
+[Create a free GitHub account](https://github.com/signup/free), then [fork](http://help.github.com/fork-a-repo/) [this project](https://github.com/spiralofhope/shoes-contrib).
+
+The top of [browser.rb](https://github.com/spiralofhope/shoes-contrib/blob/master/browser.rb) has a list of actionable items.  You can also scan the document for comments with TODO or FIXME.
 
 ## I have a question!
 
@@ -55,7 +60,7 @@ Questions about shoes programming should go here.
 
 **IRC**
 
-Hop on [#shoes on Freenode](http://webchat.freenode.net/#shoes), if you're into that whole IRC thing.
+[#shoes on Freenode.net](http://webchat.freenode.net/#shoes)
 
 To get a person's attention, be sure to write out their full IRC name when you're first talking to them.
 
