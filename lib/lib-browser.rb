@@ -105,7 +105,7 @@ def rebuild_readme()
     i = 'raw/master/categories/'.concat( i )
     # TODO:  Make it a link.
     string.concat( %Q{<img align="left" alt="#{ category }" src="#{ i }">} )
-    string.concat( "\n" )
+    string.concat( "\n<br>\n" )
     # TODO:  Make it a link.  I'd also have to make the target category pages.  Big TODO.
     string.concat( %Q{<a href="">} )
     string.concat( "\n  " )

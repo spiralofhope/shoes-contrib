@@ -70,6 +70,7 @@ To get a person's attention, be sure to write out their full IRC name when you'r
 
 
 <img align="left" alt="animation" src="raw/master/categories/animation.png">
+<br>
 <a href="">
   animation
 </a>
@@ -77,6 +78,7 @@ This category is _filled_ with movement!
 <br clear="all">
 
 <img align="left" alt="apps" src="raw/master/categories/apps.png">
+<br>
 <a href="">
   apps
 </a>
@@ -84,6 +86,7 @@ No description found
 <br clear="all">
 
 <img align="left" alt="art" src="raw/master/categories/art.png">
+<br>
 <a href="">
   art
 </a>
@@ -91,6 +94,7 @@ No description found
 <br clear="all">
 
 <img align="left" alt="basic" src="raw/master/categories/basic.png">
+<br>
 <a href="">
   basic
 </a>
@@ -98,6 +102,7 @@ No description found
 <br clear="all">
 
 <img align="left" alt="elements" src="raw/master/categories/elements.png">
+<br>
 <a href="">
   elements
 </a>
@@ -105,6 +110,7 @@ No description found
 <br clear="all">
 
 <img align="left" alt="events" src="raw/master/categories/events.png">
+<br>
 <a href="">
   events
 </a>
@@ -112,6 +118,7 @@ No description found
 <br clear="all">
 
 <img align="left" alt="expert" src="raw/master/categories/expert.png">
+<br>
 <a href="">
   expert
 </a>
@@ -119,6 +126,7 @@ No description found
 <br clear="all">
 
 <img align="left" alt="good" src="raw/master/categories/good.png">
+<br>
 <a href="">
   good
 </a>
@@ -126,6 +134,7 @@ No description found
 <br clear="all">
 
 <img align="left" alt="kernel" src="raw/master/categories/kernel.png">
+<br>
 <a href="">
   kernel
 </a>
@@ -133,6 +142,7 @@ No description found
 <br clear="all">
 
 <img align="left" alt="manipulation" src="raw/master/categories/manipulation.png">
+<br>
 <a href="">
   manipulation
 </a>
@@ -140,6 +150,7 @@ No description found
 <br clear="all">
 
 <img align="left" alt="position" src="raw/master/categories/position.png">
+<br>
 <a href="">
   position
 </a>
@@ -147,6 +158,7 @@ No description found
 <br clear="all">
 
 <img align="left" alt="shapes" src="raw/master/categories/shapes.png">
+<br>
 <a href="">
   shapes
 </a>
@@ -154,6 +166,7 @@ No description found
 <br clear="all">
 
 <img align="left" alt="simple" src="raw/master/categories/simple.png">
+<br>
 <a href="">
   simple
 </a>
@@ -161,6 +174,7 @@ No description found
 <br clear="all">
 
 <img align="left" alt="styles" src="raw/master/categories/styles.png">
+<br>
 <a href="">
   styles
 </a>
