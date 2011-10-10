@@ -118,7 +118,7 @@ def rebuild_readme()
     string.concat( category_description( category ) )
     string.concat( "\n" )
     string.concat( %Q{<br clear="all">} )
-    string.concat( "\n</p>\n" )
+    string.concat( "\n\n</p>\n" )
     #
   }
   filename = File.join( '..', 'README.markdown' )

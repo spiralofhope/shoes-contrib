@@ -78,6 +78,7 @@ To get a person's attention, be sure to write out their full IRC name when you'r
 <br>
 This category is _filled_ with movement!
 <br clear="all">
+
 </p>
 <p>
 <img style="padding:10px;" alt="apps" src="raw/master/categories/apps.png">
@@ -88,6 +89,7 @@ This category is _filled_ with movement!
 <br>
 No description found
 <br clear="all">
+
 </p>
 <p>
 <img style="padding:10px;" alt="art" src="raw/master/categories/art.png">
@@ -98,6 +100,7 @@ No description found
 <br>
 No description found
 <br clear="all">
+
 </p>
 <p>
 <img style="padding:10px;" alt="basic" src="raw/master/categories/basic.png">
@@ -108,6 +111,7 @@ No description found
 <br>
 No description found
 <br clear="all">
+
 </p>
 <p>
 <img style="padding:10px;" alt="elements" src="raw/master/categories/elements.png">
@@ -118,6 +122,7 @@ No description found
 <br>
 No description found
 <br clear="all">
+
 </p>
 <p>
 <img style="padding:10px;" alt="events" src="raw/master/categories/events.png">
@@ -128,6 +133,7 @@ No description found
 <br>
 No description found
 <br clear="all">
+
 </p>
 <p>
 <img style="padding:10px;" alt="expert" src="raw/master/categories/expert.png">
@@ -138,6 +144,7 @@ No description found
 <br>
 No description found
 <br clear="all">
+
 </p>
 <p>
 <img style="padding:10px;" alt="good" src="raw/master/categories/good.png">
@@ -148,6 +155,7 @@ No description found
 <br>
 No description found
 <br clear="all">
+
 </p>
 <p>
 <img style="padding:10px;" alt="kernel" src="raw/master/categories/kernel.png">
@@ -158,6 +166,7 @@ No description found
 <br>
 No description found
 <br clear="all">
+
 </p>
 <p>
 <img style="padding:10px;" alt="manipulation" src="raw/master/categories/manipulation.png">
@@ -168,6 +177,7 @@ No description found
 <br>
 No description found
 <br clear="all">
+
 </p>
 <p>
 <img style="padding:10px;" alt="position" src="raw/master/categories/position.png">
@@ -178,6 +188,7 @@ No description found
 <br>
 No description found
 <br clear="all">
+
 </p>
 <p>
 <img style="padding:10px;" alt="shapes" src="raw/master/categories/shapes.png">
@@ -188,6 +199,7 @@ No description found
 <br>
 No description found
 <br clear="all">
+
 </p>
 <p>
 <img style="padding:10px;" alt="simple" src="raw/master/categories/simple.png">
@@ -198,6 +210,7 @@ No description found
 <br>
 No description found
 <br clear="all">
+
 </p>
 <p>
 <img style="padding:10px;" alt="styles" src="raw/master/categories/styles.png">
@@ -208,4 +221,5 @@ No description found
 <br>
 No description found
 <br clear="all">
+
 </p>
