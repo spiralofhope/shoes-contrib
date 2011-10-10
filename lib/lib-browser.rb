@@ -75,34 +75,45 @@ def rebuild()
   }
 end
 
+# TODO:  Allow markdown
+def category_description( category_name )
+  dir = File.join( '..', 'categories' )
+  i = File.join( '..', 'categories', 'default-description.txt' )
+  f = File.join( dir, "#{ category_name }.txt" )
+  i = f if File.exists?( f )
+  return file_read( i )
+end
+
 # TODO:  Left-align the image, and have the category text on the right to the top.
 # TODO:  Category text:  categories/name.txt
+# See also view_category_summary()
 def rebuild_readme()
   filename = File.join( '..', 'lib', 'README.markdown.prepend' )
-  # This is bad on very large files, but should work fine for our purposes.
   string = file_read( filename )
-  @@categories_array.each{ |e|
-    # Header
-    # On Github, <h2> ( ## string ) adds a horizontal rule above itself.
-    a = "\n\n## #{ e }\n"
+  @@categories_array.each{ |category|
     # Image
     i = File.join( '..', 'default-thumbnail.png' )
     dir = File.join( '..', 'categories' )
     #
-    f = File.join( dir, "#{ e }.png" )
+    f = File.join( dir, "#{ category }.png" )
     i = f if File.exists?( f )
-    f = File.join( dir, "#{ e }.jpg" )
+    f = File.join( dir, "#{ category }.jpg" )
     i = f if File.exists?( f )
     i = i.split( File::Separator )[-1]
-    #i = i[1..-1].join( '/' )
     # FIXME:  An absolute path like this will break mirrors.  Make it relative.
-    i = 'https://github.com/spiralofhope/shoes-contrib/raw/master/categories/'.concat( i )
+    #i = 'https://github.com/spiralofhope/shoes-contrib/raw/master/categories/'.concat( i )
+    i = 'raw/master/categories/'.concat( i )
+    # TODO:  Make it a link.
+    string.concat( %Q{<img align="left" alt="#{ category }" src="#{ i }">} )
+    # TODO:  Make it a link.
+    string.concat( category )
+    string.concat( "\n" )
+    string.concat( %Q{<br clear="all">} )
+    string.concat( "\n" )
+    string.concat( category_description( category ) )
     #
-    a.concat( "![#{ e }](#{ i })" )
-    #
-    string.concat( a )
+    string.concat( "\n" )
   }
-  string.concat( "\n\n" )
   filename = File.join( '..', 'README.markdown' )
   file_create( filename, string )
 end
@@ -116,6 +127,7 @@ def file_create(
   }                             # file is automatically closed
 end
 
+# This is bad with very large files, but should work fine for our purposes.
 def file_read( file )
   # TODO:  Investigate issues that with filenames which have a space.
   # FIXME:  There will be memory issues with reading large files.

@@ -220,6 +220,7 @@ end # view_program_summary( directory, *splat )
 # @content
 def view_categories_list()
 
+  # See also rebuild_readme()
   def view_category_summary( category_name )
     #
     # This is largely cloned from program_thumbnail()
@@ -250,6 +251,8 @@ def view_categories_list()
         end
         flow( width: width-150 ) do
           para( link( category_name ){ view_a_category( category_name ) } )
+          para( "\n" )
+          para( category_description( category_name ) )
         end
       end
     end

@@ -13,9 +13,12 @@ You've found [spiralofhope](http://spiralofhope.com)'s fork of [the shoes-contri
 
 ## What is shoes-contrib?
 
-Shoes-contrib is a collection of examples for [Shoes](http://shoesrb.com/), the best little GUI toolkit for Ruby. 
+Shoes-contrib is a collection of examples for [Shoes](http://shoesrb.com/), the best little GUI toolkit for Ruby. (In our case it's the original Red Shoes)
 
 We packaged up a bunch of great little scripts to show off different parts of Shoes, so if you're looking to tinker around, need to find an example of some part of the API, or just want to see what Shoes can do, you're in the right place!
+
+
+Right now the project is focusing on its browser, but when it turns to the example programs and tutorials, they will be stripped down into[Short, Self Contained, Correct, Example](http://sscce.org/)s to make them as easy as possible to learn from.
 
 ## How can I try the examples out?
 
@@ -35,13 +38,15 @@ The best way is to [fork](http://help.github.com/fork-a-repo/) [this project](ht
 
 Look at any other program for an idea of how they are created.  Don't forget to add your `tags` and `categories` keywords.  Talk with me before defining a new category keyword.
 
-**Contact me**
+**Contact spiralofhope**
 
 You can also [contact me](http://spiralofhope.com/contact-me.html) directly to have your addition made.
 
 ## How can I contribute to the project?
 
-[Create a free GitHub account](https://github.com/signup/free), then [fork](http://help.github.com/fork-a-repo/) [this project](https://github.com/spiralofhope/shoes-contrib)
+[Create a free GitHub account](https://github.com/signup/free), then [fork](http://help.github.com/fork-a-repo/) [this project](https://github.com/spiralofhope/shoes-contrib).
+
+The top of [browser.rb](https://github.com/spiralofhope/shoes-contrib/blob/master/browser.rb) has a list of actionable items.  You can also scan the document for comments with TODO or FIXME.
 
 ## I have a question!
 
@@ -55,54 +60,68 @@ Questions about shoes programming should go here.
 
 **IRC**
 
-Hop on [#shoes on Freenode](http://webchat.freenode.net/#shoes), if you're into that whole IRC thing.
+[#shoes on Freenode.net](http://webchat.freenode.net/#shoes)
 
 To get a person's attention, be sure to write out their full IRC name when you're first talking to them.
 
 **Email**
 
-[Contact spiralofhope directly](http://spiralofhope.com/contact-me.html) 
+[Contact spiralofhope directly](http://spiralofhope.com/contact-me.html)
 
 
-## animation
-![animation](https://github.com/spiralofhope/shoes-contrib/raw/master/categories/animation.png)
+<img align="left" alt="animation" src="raw/master/categories/animation.png">animation
+<br clear="all">
+This category is _filled_ with movement!
 
-## apps
-![apps](https://github.com/spiralofhope/shoes-contrib/raw/master/categories/apps.png)
+<img align="left" alt="apps" src="raw/master/categories/apps.png">apps
+<br clear="all">
+No description found
 
-## art
-![art](https://github.com/spiralofhope/shoes-contrib/raw/master/categories/art.png)
+<img align="left" alt="art" src="raw/master/categories/art.png">art
+<br clear="all">
+No description found
 
-## basic
-![basic](https://github.com/spiralofhope/shoes-contrib/raw/master/categories/basic.png)
+<img align="left" alt="basic" src="raw/master/categories/basic.png">basic
+<br clear="all">
+No description found
 
-## elements
-![elements](https://github.com/spiralofhope/shoes-contrib/raw/master/categories/elements.png)
+<img align="left" alt="elements" src="raw/master/categories/elements.png">elements
+<br clear="all">
+No description found
 
-## events
-![events](https://github.com/spiralofhope/shoes-contrib/raw/master/categories/events.png)
+<img align="left" alt="events" src="raw/master/categories/events.png">events
+<br clear="all">
+No description found
 
-## expert
-![expert](https://github.com/spiralofhope/shoes-contrib/raw/master/categories/expert.png)
+<img align="left" alt="expert" src="raw/master/categories/expert.png">expert
+<br clear="all">
+No description found
 
-## good
-![good](https://github.com/spiralofhope/shoes-contrib/raw/master/categories/good.png)
+<img align="left" alt="good" src="raw/master/categories/good.png">good
+<br clear="all">
+No description found
 
-## kernel
-![kernel](https://github.com/spiralofhope/shoes-contrib/raw/master/categories/kernel.png)
+<img align="left" alt="kernel" src="raw/master/categories/kernel.png">kernel
+<br clear="all">
+No description found
 
-## manipulation
-![manipulation](https://github.com/spiralofhope/shoes-contrib/raw/master/categories/manipulation.png)
+<img align="left" alt="manipulation" src="raw/master/categories/manipulation.png">manipulation
+<br clear="all">
+No description found
 
-## position
-![position](https://github.com/spiralofhope/shoes-contrib/raw/master/categories/position.png)
+<img align="left" alt="position" src="raw/master/categories/position.png">position
+<br clear="all">
+No description found
 
-## shapes
-![shapes](https://github.com/spiralofhope/shoes-contrib/raw/master/categories/shapes.png)
+<img align="left" alt="shapes" src="raw/master/categories/shapes.png">shapes
+<br clear="all">
+No description found
 
-## simple
-![simple](https://github.com/spiralofhope/shoes-contrib/raw/master/categories/simple.png)
+<img align="left" alt="simple" src="raw/master/categories/simple.png">simple
+<br clear="all">
+No description found
 
-## styles
-![styles](https://github.com/spiralofhope/shoes-contrib/raw/master/categories/styles.png)
+<img align="left" alt="styles" src="raw/master/categories/styles.png">styles
+<br clear="all">
+No description found
 
