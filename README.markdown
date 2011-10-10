@@ -71,7 +71,7 @@ To get a person's attention, be sure to write out their full IRC name when you'r
 
 
 
-<img align="left" hspace="20" alt="animation" src="raw/master/categories/animation.png">
+<img align="left" hspace="20" width="150" height="150" alt="animation" src="raw/master/categories/animation.png">
 <a href="">
   animation
 </a>
@@ -79,7 +79,7 @@ To get a person's attention, be sure to write out their full IRC name when you'r
 This category is _filled_ with movement!
 <br clear="all">
 
-<img align="left" hspace="20" alt="apps" src="raw/master/categories/apps.png">
+<img align="left" hspace="20" width="150" height="150" alt="apps" src="raw/master/categories/apps.png">
 <a href="">
   apps
 </a>
@@ -87,7 +87,7 @@ This category is _filled_ with movement!
 No description found
 <br clear="all">
 
-<img align="left" hspace="20" alt="art" src="raw/master/categories/art.png">
+<img align="left" hspace="20" width="150" height="150" alt="art" src="raw/master/categories/art.png">
 <a href="">
   art
 </a>
@@ -95,7 +95,7 @@ No description found
 No description found
 <br clear="all">
 
-<img align="left" hspace="20" alt="basic" src="raw/master/categories/basic.png">
+<img align="left" hspace="20" width="150" height="150" alt="basic" src="raw/master/categories/basic.png">
 <a href="">
   basic
 </a>
@@ -103,7 +103,7 @@ No description found
 No description found
 <br clear="all">
 
-<img align="left" hspace="20" alt="elements" src="raw/master/categories/elements.png">
+<img align="left" hspace="20" width="150" height="150" alt="elements" src="raw/master/categories/elements.png">
 <a href="">
   elements
 </a>
@@ -111,7 +111,7 @@ No description found
 No description found
 <br clear="all">
 
-<img align="left" hspace="20" alt="events" src="raw/master/categories/events.png">
+<img align="left" hspace="20" width="150" height="150" alt="events" src="raw/master/categories/events.png">
 <a href="">
   events
 </a>
@@ -119,7 +119,7 @@ No description found
 No description found
 <br clear="all">
 
-<img align="left" hspace="20" alt="expert" src="raw/master/categories/expert.png">
+<img align="left" hspace="20" width="150" height="150" alt="expert" src="raw/master/categories/expert.png">
 <a href="">
   expert
 </a>
@@ -127,7 +127,7 @@ No description found
 No description found
 <br clear="all">
 
-<img align="left" hspace="20" alt="good" src="raw/master/categories/good.png">
+<img align="left" hspace="20" width="150" height="150" alt="good" src="raw/master/categories/good.png">
 <a href="">
   good
 </a>
@@ -135,7 +135,7 @@ No description found
 No description found
 <br clear="all">
 
-<img align="left" hspace="20" alt="kernel" src="raw/master/categories/kernel.png">
+<img align="left" hspace="20" width="150" height="150" alt="kernel" src="raw/master/categories/kernel.png">
 <a href="">
   kernel
 </a>
@@ -143,7 +143,7 @@ No description found
 No description found
 <br clear="all">
 
-<img align="left" hspace="20" alt="manipulation" src="raw/master/categories/manipulation.png">
+<img align="left" hspace="20" width="150" height="150" alt="manipulation" src="raw/master/categories/manipulation.png">
 <a href="">
   manipulation
 </a>
@@ -151,7 +151,7 @@ No description found
 No description found
 <br clear="all">
 
-<img align="left" hspace="20" alt="position" src="raw/master/categories/position.png">
+<img align="left" hspace="20" width="150" height="150" alt="position" src="raw/master/categories/position.png">
 <a href="">
   position
 </a>
@@ -159,7 +159,7 @@ No description found
 No description found
 <br clear="all">
 
-<img align="left" hspace="20" alt="shapes" src="raw/master/categories/shapes.png">
+<img align="left" hspace="20" width="150" height="150" alt="shapes" src="raw/master/categories/shapes.png">
 <a href="">
   shapes
 </a>
@@ -167,7 +167,7 @@ No description found
 No description found
 <br clear="all">
 
-<img align="left" hspace="20" alt="simple" src="raw/master/categories/simple.png">
+<img align="left" hspace="20" width="150" height="150" alt="simple" src="raw/master/categories/simple.png">
 <a href="">
   simple
 </a>
@@ -175,7 +175,7 @@ No description found
 No description found
 <br clear="all">
 
-<img align="left" hspace="20" alt="styles" src="raw/master/categories/styles.png">
+<img align="left" hspace="20" width="150" height="150" alt="styles" src="raw/master/categories/styles.png">
 <a href="">
   styles
 </a>
