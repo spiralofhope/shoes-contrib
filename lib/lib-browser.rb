@@ -104,7 +104,7 @@ def rebuild_readme()
     #i = 'https://github.com/spiralofhope/shoes-contrib/raw/master/categories/'.concat( i )
     i = 'raw/master/categories/'.concat( i )
     # TODO:  Make it a link.
-    string.concat( %Q{<img style="padding-right:5px;" align="left" alt="#{ category }" src="#{ i }">} )
+    string.concat( %Q{<img hspace="5px" alt="#{ category }" src="#{ i }">} )
     string.concat( "\n" )
     # TODO:  Make it a link.  I'd also have to make the target category pages.  Big TODO.
     string.concat( %Q{<a href="">} )
