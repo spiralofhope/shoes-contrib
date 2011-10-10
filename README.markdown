@@ -71,115 +71,115 @@ To get a person's attention, be sure to write out their full IRC name when you'r
 
 
 
-<img align="left" hspace="20" width="150" height="150" alt="animation" src="raw/master/categories/animation.png">
-<a href="">
+<IMG ALIGN=LEFT HSPACE=20 WIDTH=150 HEIGHT=150 ALT="animation" SRC="raw/master/categories/animation.png">
+<A HREF="">
   animation
-</a>
+</A>
 <br>
 This category is _filled_ with movement!
-<br clear="all">
+<BR CLEAR="ALL">
 
-<img align="left" hspace="20" width="150" height="150" alt="apps" src="raw/master/categories/apps.png">
-<a href="">
+<IMG ALIGN=LEFT HSPACE=20 WIDTH=150 HEIGHT=150 ALT="apps" SRC="raw/master/categories/apps.png">
+<A HREF="">
   apps
-</a>
+</A>
 <br>
 No description found
-<br clear="all">
+<BR CLEAR="ALL">
 
-<img align="left" hspace="20" width="150" height="150" alt="art" src="raw/master/categories/art.png">
-<a href="">
+<IMG ALIGN=LEFT HSPACE=20 WIDTH=150 HEIGHT=150 ALT="art" SRC="raw/master/categories/art.png">
+<A HREF="">
   art
-</a>
+</A>
 <br>
 No description found
-<br clear="all">
+<BR CLEAR="ALL">
 
-<img align="left" hspace="20" width="150" height="150" alt="basic" src="raw/master/categories/basic.png">
-<a href="">
+<IMG ALIGN=LEFT HSPACE=20 WIDTH=150 HEIGHT=150 ALT="basic" SRC="raw/master/categories/basic.png">
+<A HREF="">
   basic
-</a>
+</A>
 <br>
 No description found
-<br clear="all">
+<BR CLEAR="ALL">
 
-<img align="left" hspace="20" width="150" height="150" alt="elements" src="raw/master/categories/elements.png">
-<a href="">
+<IMG ALIGN=LEFT HSPACE=20 WIDTH=150 HEIGHT=150 ALT="elements" SRC="raw/master/categories/elements.png">
+<A HREF="">
   elements
-</a>
+</A>
 <br>
 No description found
-<br clear="all">
+<BR CLEAR="ALL">
 
-<img align="left" hspace="20" width="150" height="150" alt="events" src="raw/master/categories/events.png">
-<a href="">
+<IMG ALIGN=LEFT HSPACE=20 WIDTH=150 HEIGHT=150 ALT="events" SRC="raw/master/categories/events.png">
+<A HREF="">
   events
-</a>
+</A>
 <br>
 No description found
-<br clear="all">
+<BR CLEAR="ALL">
 
-<img align="left" hspace="20" width="150" height="150" alt="expert" src="raw/master/categories/expert.png">
-<a href="">
+<IMG ALIGN=LEFT HSPACE=20 WIDTH=150 HEIGHT=150 ALT="expert" SRC="raw/master/categories/expert.png">
+<A HREF="">
   expert
-</a>
+</A>
 <br>
 No description found
-<br clear="all">
+<BR CLEAR="ALL">
 
-<img align="left" hspace="20" width="150" height="150" alt="good" src="raw/master/categories/good.png">
-<a href="">
+<IMG ALIGN=LEFT HSPACE=20 WIDTH=150 HEIGHT=150 ALT="good" SRC="raw/master/categories/good.png">
+<A HREF="">
   good
-</a>
+</A>
 <br>
 No description found
-<br clear="all">
+<BR CLEAR="ALL">
 
-<img align="left" hspace="20" width="150" height="150" alt="kernel" src="raw/master/categories/kernel.png">
-<a href="">
+<IMG ALIGN=LEFT HSPACE=20 WIDTH=150 HEIGHT=150 ALT="kernel" SRC="raw/master/categories/kernel.png">
+<A HREF="">
   kernel
-</a>
+</A>
 <br>
 No description found
-<br clear="all">
+<BR CLEAR="ALL">
 
-<img align="left" hspace="20" width="150" height="150" alt="manipulation" src="raw/master/categories/manipulation.png">
-<a href="">
+<IMG ALIGN=LEFT HSPACE=20 WIDTH=150 HEIGHT=150 ALT="manipulation" SRC="raw/master/categories/manipulation.png">
+<A HREF="">
   manipulation
-</a>
+</A>
 <br>
 No description found
-<br clear="all">
+<BR CLEAR="ALL">
 
-<img align="left" hspace="20" width="150" height="150" alt="position" src="raw/master/categories/position.png">
-<a href="">
+<IMG ALIGN=LEFT HSPACE=20 WIDTH=150 HEIGHT=150 ALT="position" SRC="raw/master/categories/position.png">
+<A HREF="">
   position
-</a>
+</A>
 <br>
 No description found
-<br clear="all">
+<BR CLEAR="ALL">
 
-<img align="left" hspace="20" width="150" height="150" alt="shapes" src="raw/master/categories/shapes.png">
-<a href="">
+<IMG ALIGN=LEFT HSPACE=20 WIDTH=150 HEIGHT=150 ALT="shapes" SRC="raw/master/categories/shapes.png">
+<A HREF="">
   shapes
-</a>
+</A>
 <br>
 No description found
-<br clear="all">
+<BR CLEAR="ALL">
 
-<img align="left" hspace="20" width="150" height="150" alt="simple" src="raw/master/categories/simple.png">
-<a href="">
+<IMG ALIGN=LEFT HSPACE=20 WIDTH=150 HEIGHT=150 ALT="simple" SRC="raw/master/categories/simple.png">
+<A HREF="">
   simple
-</a>
+</A>
 <br>
 No description found
-<br clear="all">
+<BR CLEAR="ALL">
 
-<img align="left" hspace="20" width="150" height="150" alt="styles" src="raw/master/categories/styles.png">
-<a href="">
+<IMG ALIGN=LEFT HSPACE=20 WIDTH=150 HEIGHT=150 ALT="styles" SRC="raw/master/categories/styles.png">
+<A HREF="">
   styles
-</a>
+</A>
 <br>
 No description found
-<br clear="all">
+<BR CLEAR="ALL">
 
