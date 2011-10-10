@@ -104,20 +104,21 @@ def rebuild_readme()
     #i = 'https://github.com/spiralofhope/shoes-contrib/raw/master/categories/'.concat( i )
     i = 'raw/master/categories/'.concat( i )
     # TODO:  Make it a link.
-    # hspace="5px" 
+    # hspace="5px"
+    string.concat( "<p>\n" )
     string.concat( %Q{<img style="padding:10px;" alt="#{ category }" src="#{ i }">} )
-    string.concat( "\n<br>" )
+    string.concat( "\n<br>\n" )
     # TODO:  Make it a link.  I'd also have to make the target category pages.  Big TODO.
     string.concat( %Q{<a href="">} )
     string.concat( "\n  " )
     string.concat( category )
     string.concat( "\n" )
     string.concat( %Q{</a>} )
-    string.concat( "\n<br>" )
+    string.concat( "\n<br>\n" )
     string.concat( category_description( category ) )
     string.concat( "\n" )
     string.concat( %Q{<br clear="all">} )
-    string.concat( "\n\n" )
+    string.concat( "\n</p>\n" )
     #
   }
   filename = File.join( '..', 'README.markdown' )
