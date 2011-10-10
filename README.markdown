@@ -71,7 +71,7 @@ To get a person's attention, be sure to write out their full IRC name when you'r
 
 
 
-<img hspace="5" alt="animation" src="raw/master/categories/animation.png">
+<img align="left" hspace="5" alt="animation" src="raw/master/categories/animation.png">
 <br>
 <a href="">
   animation
@@ -80,7 +80,7 @@ To get a person's attention, be sure to write out their full IRC name when you'r
 This category is _filled_ with movement!
 <br clear="all">
 
-<img hspace="5" alt="apps" src="raw/master/categories/apps.png">
+<img align="left" hspace="5" alt="apps" src="raw/master/categories/apps.png">
 <br>
 <a href="">
   apps
@@ -89,7 +89,7 @@ This category is _filled_ with movement!
 No description found
 <br clear="all">
 
-<img hspace="5" alt="art" src="raw/master/categories/art.png">
+<img align="left" hspace="5" alt="art" src="raw/master/categories/art.png">
 <br>
 <a href="">
   art
@@ -98,7 +98,7 @@ No description found
 No description found
 <br clear="all">
 
-<img hspace="5" alt="basic" src="raw/master/categories/basic.png">
+<img align="left" hspace="5" alt="basic" src="raw/master/categories/basic.png">
 <br>
 <a href="">
   basic
@@ -107,7 +107,7 @@ No description found
 No description found
 <br clear="all">
 
-<img hspace="5" alt="elements" src="raw/master/categories/elements.png">
+<img align="left" hspace="5" alt="elements" src="raw/master/categories/elements.png">
 <br>
 <a href="">
   elements
@@ -116,7 +116,7 @@ No description found
 No description found
 <br clear="all">
 
-<img hspace="5" alt="events" src="raw/master/categories/events.png">
+<img align="left" hspace="5" alt="events" src="raw/master/categories/events.png">
 <br>
 <a href="">
   events
@@ -125,7 +125,7 @@ No description found
 No description found
 <br clear="all">
 
-<img hspace="5" alt="expert" src="raw/master/categories/expert.png">
+<img align="left" hspace="5" alt="expert" src="raw/master/categories/expert.png">
 <br>
 <a href="">
   expert
@@ -134,7 +134,7 @@ No description found
 No description found
 <br clear="all">
 
-<img hspace="5" alt="good" src="raw/master/categories/good.png">
+<img align="left" hspace="5" alt="good" src="raw/master/categories/good.png">
 <br>
 <a href="">
   good
@@ -143,7 +143,7 @@ No description found
 No description found
 <br clear="all">
 
-<img hspace="5" alt="kernel" src="raw/master/categories/kernel.png">
+<img align="left" hspace="5" alt="kernel" src="raw/master/categories/kernel.png">
 <br>
 <a href="">
   kernel
@@ -152,7 +152,7 @@ No description found
 No description found
 <br clear="all">
 
-<img hspace="5" alt="manipulation" src="raw/master/categories/manipulation.png">
+<img align="left" hspace="5" alt="manipulation" src="raw/master/categories/manipulation.png">
 <br>
 <a href="">
   manipulation
@@ -161,7 +161,7 @@ No description found
 No description found
 <br clear="all">
 
-<img hspace="5" alt="position" src="raw/master/categories/position.png">
+<img align="left" hspace="5" alt="position" src="raw/master/categories/position.png">
 <br>
 <a href="">
   position
@@ -170,7 +170,7 @@ No description found
 No description found
 <br clear="all">
 
-<img hspace="5" alt="shapes" src="raw/master/categories/shapes.png">
+<img align="left" hspace="5" alt="shapes" src="raw/master/categories/shapes.png">
 <br>
 <a href="">
   shapes
@@ -179,7 +179,7 @@ No description found
 No description found
 <br clear="all">
 
-<img hspace="5" alt="simple" src="raw/master/categories/simple.png">
+<img align="left" hspace="5" alt="simple" src="raw/master/categories/simple.png">
 <br>
 <a href="">
   simple
@@ -188,7 +188,7 @@ No description found
 No description found
 <br clear="all">
 
-<img hspace="5" alt="styles" src="raw/master/categories/styles.png">
+<img align="left" hspace="5" alt="styles" src="raw/master/categories/styles.png">
 <br>
 <a href="">
   styles
