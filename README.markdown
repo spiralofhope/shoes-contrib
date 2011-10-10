@@ -69,98 +69,98 @@ To get a person's attention, be sure to write out their full IRC name when you'r
 [Contact spiralofhope directly](http://spiralofhope.com/contact-me.html)
 
 
-<img align="left" alt="animation" src="raw/master/categories/animation.png">
+<img style="padding-right:5px;" align="left" alt="animation" src="raw/master/categories/animation.png">
 <a href="">
   animation
 </a>
 <br>This category is _filled_ with movement!
 <br clear="all">
 
-<img align="left" alt="apps" src="raw/master/categories/apps.png">
+<img style="padding-right:5px;" align="left" alt="apps" src="raw/master/categories/apps.png">
 <a href="">
   apps
 </a>
 <br>No description found
 <br clear="all">
 
-<img align="left" alt="art" src="raw/master/categories/art.png">
+<img style="padding-right:5px;" align="left" alt="art" src="raw/master/categories/art.png">
 <a href="">
   art
 </a>
 <br>No description found
 <br clear="all">
 
-<img align="left" alt="basic" src="raw/master/categories/basic.png">
+<img style="padding-right:5px;" align="left" alt="basic" src="raw/master/categories/basic.png">
 <a href="">
   basic
 </a>
 <br>No description found
 <br clear="all">
 
-<img align="left" alt="elements" src="raw/master/categories/elements.png">
+<img style="padding-right:5px;" align="left" alt="elements" src="raw/master/categories/elements.png">
 <a href="">
   elements
 </a>
 <br>No description found
 <br clear="all">
 
-<img align="left" alt="events" src="raw/master/categories/events.png">
+<img style="padding-right:5px;" align="left" alt="events" src="raw/master/categories/events.png">
 <a href="">
   events
 </a>
 <br>No description found
 <br clear="all">
 
-<img align="left" alt="expert" src="raw/master/categories/expert.png">
+<img style="padding-right:5px;" align="left" alt="expert" src="raw/master/categories/expert.png">
 <a href="">
   expert
 </a>
 <br>No description found
 <br clear="all">
 
-<img align="left" alt="good" src="raw/master/categories/good.png">
+<img style="padding-right:5px;" align="left" alt="good" src="raw/master/categories/good.png">
 <a href="">
   good
 </a>
 <br>No description found
 <br clear="all">
 
-<img align="left" alt="kernel" src="raw/master/categories/kernel.png">
+<img style="padding-right:5px;" align="left" alt="kernel" src="raw/master/categories/kernel.png">
 <a href="">
   kernel
 </a>
 <br>No description found
 <br clear="all">
 
-<img align="left" alt="manipulation" src="raw/master/categories/manipulation.png">
+<img style="padding-right:5px;" align="left" alt="manipulation" src="raw/master/categories/manipulation.png">
 <a href="">
   manipulation
 </a>
 <br>No description found
 <br clear="all">
 
-<img align="left" alt="position" src="raw/master/categories/position.png">
+<img style="padding-right:5px;" align="left" alt="position" src="raw/master/categories/position.png">
 <a href="">
   position
 </a>
 <br>No description found
 <br clear="all">
 
-<img align="left" alt="shapes" src="raw/master/categories/shapes.png">
+<img style="padding-right:5px;" align="left" alt="shapes" src="raw/master/categories/shapes.png">
 <a href="">
   shapes
 </a>
 <br>No description found
 <br clear="all">
 
-<img align="left" alt="simple" src="raw/master/categories/simple.png">
+<img style="padding-right:5px;" align="left" alt="simple" src="raw/master/categories/simple.png">
 <a href="">
   simple
 </a>
 <br>No description found
 <br clear="all">
 
-<img align="left" alt="styles" src="raw/master/categories/styles.png">
+<img style="padding-right:5px;" align="left" alt="styles" src="raw/master/categories/styles.png">
 <a href="">
   styles
 </a>
