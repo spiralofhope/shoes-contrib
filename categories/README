@@ -1,3 +1,5 @@
 Categories are _not_ actually put here.  Each program has one or more category tags.
 
 Category descriptions _are_ put here, as category_name.txt
+
+Don't end the text inside the category_name.txt files with a newline.  So it's "textEOF" and not "text\nEOF"

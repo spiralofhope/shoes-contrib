@@ -105,14 +105,19 @@ def rebuild_readme()
     i = 'raw/master/categories/'.concat( i )
     # TODO:  Make it a link.
     string.concat( %Q{<img align="left" alt="#{ category }" src="#{ i }">} )
-    # TODO:  Make it a link.
+    string.concat( "\n" )
+    # TODO:  Make it a link.  I'd also have to make the target category pages.  Big TODO.
+    string.concat( %Q{<a href="">} )
+    string.concat( "\n  " )
     string.concat( category )
     string.concat( "\n" )
-    string.concat( %Q{<br clear="all">} )
+    string.concat( %Q{</a>} )
     string.concat( "\n" )
     string.concat( category_description( category ) )
-    #
     string.concat( "\n" )
+    string.concat( %Q{<br clear="all">} )
+    string.concat( "\n\n" )
+    #
   }
   filename = File.join( '..', 'README.markdown' )
   file_create( filename, string )

@@ -69,59 +69,101 @@ To get a person's attention, be sure to write out their full IRC name when you'r
 [Contact spiralofhope directly](http://spiralofhope.com/contact-me.html)
 
 
-<img align="left" alt="animation" src="raw/master/categories/animation.png">animation
-<br clear="all">
+<img align="left" alt="animation" src="raw/master/categories/animation.png">
+<a href="">
+  animation
+</a>
 This category is _filled_ with movement!
-
-<img align="left" alt="apps" src="raw/master/categories/apps.png">apps
 <br clear="all">
-No description found
 
-<img align="left" alt="art" src="raw/master/categories/art.png">art
-<br clear="all">
+<img align="left" alt="apps" src="raw/master/categories/apps.png">
+<a href="">
+  apps
+</a>
 No description found
+<br clear="all">
 
-<img align="left" alt="basic" src="raw/master/categories/basic.png">basic
-<br clear="all">
+<img align="left" alt="art" src="raw/master/categories/art.png">
+<a href="">
+  art
+</a>
 No description found
+<br clear="all">
 
-<img align="left" alt="elements" src="raw/master/categories/elements.png">elements
-<br clear="all">
+<img align="left" alt="basic" src="raw/master/categories/basic.png">
+<a href="">
+  basic
+</a>
 No description found
+<br clear="all">
 
-<img align="left" alt="events" src="raw/master/categories/events.png">events
-<br clear="all">
+<img align="left" alt="elements" src="raw/master/categories/elements.png">
+<a href="">
+  elements
+</a>
 No description found
+<br clear="all">
 
-<img align="left" alt="expert" src="raw/master/categories/expert.png">expert
-<br clear="all">
+<img align="left" alt="events" src="raw/master/categories/events.png">
+<a href="">
+  events
+</a>
 No description found
+<br clear="all">
 
-<img align="left" alt="good" src="raw/master/categories/good.png">good
-<br clear="all">
+<img align="left" alt="expert" src="raw/master/categories/expert.png">
+<a href="">
+  expert
+</a>
 No description found
+<br clear="all">
 
-<img align="left" alt="kernel" src="raw/master/categories/kernel.png">kernel
-<br clear="all">
+<img align="left" alt="good" src="raw/master/categories/good.png">
+<a href="">
+  good
+</a>
 No description found
+<br clear="all">
 
-<img align="left" alt="manipulation" src="raw/master/categories/manipulation.png">manipulation
-<br clear="all">
+<img align="left" alt="kernel" src="raw/master/categories/kernel.png">
+<a href="">
+  kernel
+</a>
 No description found
+<br clear="all">
 
-<img align="left" alt="position" src="raw/master/categories/position.png">position
-<br clear="all">
+<img align="left" alt="manipulation" src="raw/master/categories/manipulation.png">
+<a href="">
+  manipulation
+</a>
 No description found
+<br clear="all">
 
-<img align="left" alt="shapes" src="raw/master/categories/shapes.png">shapes
-<br clear="all">
+<img align="left" alt="position" src="raw/master/categories/position.png">
+<a href="">
+  position
+</a>
 No description found
+<br clear="all">
 
-<img align="left" alt="simple" src="raw/master/categories/simple.png">simple
-<br clear="all">
+<img align="left" alt="shapes" src="raw/master/categories/shapes.png">
+<a href="">
+  shapes
+</a>
 No description found
+<br clear="all">
 
-<img align="left" alt="styles" src="raw/master/categories/styles.png">styles
-<br clear="all">
+<img align="left" alt="simple" src="raw/master/categories/simple.png">
+<a href="">
+  simple
+</a>
 No description found
+<br clear="all">
+
+<img align="left" alt="styles" src="raw/master/categories/styles.png">
+<a href="">
+  styles
+</a>
+No description found
+<br clear="all">
 
