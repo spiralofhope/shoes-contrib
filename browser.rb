@@ -18,6 +18,8 @@ My personal rules are:
 
 Program changes:
 
+  TODO  Why not keep the search bar when viewing the program's source?
+
   TODO  screenshotting support
           http://www.mail-archive.com/shoes@code.whytheluckystiff.net/msg02781.html
 
@@ -128,7 +130,7 @@ Problems with programs:
 =end
 
 # FIXME:  There are a bunch of solutions for this, but I didn't want to deal with any of it.  Consider investigating something philosophically superior.
-$LOAD_PATH << './lib'
+$LOAD_PATH << File.join( File.dirname( __FILE__ ), 'lib' )
 require 'lib-browser.rb'
 
 #
@@ -173,7 +175,6 @@ def main()
   #
   @content = flow{}
   view_categories_list()
-  #
   @search.change do |s|
     if s.text.empty?
       #view_all()
@@ -204,11 +205,20 @@ def view_program_summary( directory, *splat )
         button "Run" do
           program_run( directory )
         end
-        button "Edit" do
-          editor( directory )
+        button "Edit Program" do
+          editor(
+                  File.join( directory, directory + '.rb' )
+                )
+        end
+        button "Edit Description" do
+          editor(
+                  File.join( directory, directory + '.txt' )
+                )
         end
         # FIXME:  This text needs a right margin.  I can't find the documentation for that.  (RE-TEST)
-        para( program_description( directory ) )
+        stack do
+          para( program_description( directory ) )
+        end
       end
     end
   end
@@ -259,6 +269,11 @@ def view_categories_list()
   end # view_category_summary( category_name, *splat )
 
   @content.clear
+  @content.append do
+    flow( :margin_left => 10 ){
+      para( 'Categories List > ' )
+    }
+  end
   @@categories_array.each{ |c|
     view_category_summary( c )
   }
@@ -295,7 +310,8 @@ def view_a_category( category_name )
   @content.append do
     flow( :margin_left => 10 ){
       para(
-        link( 'Back' ){ back_to_main() },
+        link( 'Categories List' ){ back_to_main() },
+        ' > View a Category > ',
         strong( " #{ category_name }" )
       )
     }
@@ -317,15 +333,6 @@ def back_to_main()
   main()
 end # back_to_main()
 
-def program_description( program_directory )
-  # Just kludging it for now.
-  # TODO:  I should use some recognized format for descriptions.  Intelligently parse the file and pull it out.  Maybe even look for a README, file_id.diz, descript.ion or some such?
-  # TODO:  Automatically link() hyperlinks.
-  # TODO:  Automatically markup text markup.
-  # TODO:  If I change the description, then add a button to view the unaltered description.
-  return 'aaaaa ' * 20
-end # program_description( program_directory )
-
 #
 # 3 - Clicking on a program
 def view_a_program( directory )
@@ -335,7 +342,8 @@ def view_a_program( directory )
   @content = stack{
    flow( :margin_left => 10 ){
       para(
-        link( 'Back' ){ back_to_main() },
+        link( 'Categories List' ){ back_to_main() },
+        ' > View a Program > ',
         strong( " #{ directory }" )
       )
     }

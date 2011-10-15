@@ -1,8 +1,8 @@
 # This is a little specific.. needs fallbacks and preferences.
 # TODO:  Implement a configuration GUI, and store preferences in a plain text file (that's excluded from github)
 def editor( filename )
-  filename = File.join( filename, filename + '.rb' )
-  system( '/usr/bin/geany', filename )
+  system( '/usr/bin/geany', '--new-instance', filename )
+  # TODO:  This should also re-read descriptions.. or something.  Editing a description doesn't update the description.
   rebuild()
 end
 
@@ -78,8 +78,8 @@ end
 # TODO:  Allow markdown
 def category_description( category_name )
   dir = File.join( '..', 'categories' )
-  i = File.join( '..', 'categories', 'default-description.txt' )
-  f = File.join( dir, "#{ category_name }.txt" )
+  i = File.join( dir, 'default-description.txt' )
+  f = File.join( dir, category_name + '.txt' )
   i = f if File.exists?( f )
   return file_read( i )
 end
@@ -106,18 +106,20 @@ def rebuild_readme()
     i = 'raw/master/categories/'.concat( i )
     # TODO:  Make it a link.
     # github strips style="padding:10px;"
-    string.concat( %Q{<IMG ALIGN=LEFT HSPACE=20 WIDTH=150 HEIGHT=150 ALT="#{ category }" SRC="#{ i }">} )
+    # hspace="20" does nothing
+    # TODO:  Implement a table to fix the formatting and get the style in line with what's seen via the program itself.
+    string.concat( %Q{<img align="left" width="150" height=150 alt="#{ category }" src="#{ i }">} )
     string.concat( "\n" )
     # TODO:  Make it a link.  I'd also have to make the target category pages.  Big TODO.
-    string.concat( %Q{<A HREF="">} )
+    string.concat( %Q{<a href="">} )
     string.concat( "\n  " )
     string.concat( category )
     string.concat( "\n" )
-    string.concat( %Q{</A>} )
+    string.concat( %Q{</a>} )
     string.concat( "\n<br>\n" )
     string.concat( category_description( category ) )
     string.concat( "\n" )
-    string.concat( %Q{<BR CLEAR="ALL">} )
+    string.concat( %Q{<br clear="all">} )
     string.concat( "\n\n" )
     #
   }
@@ -147,3 +149,22 @@ def file_read( file )
   f.close
   return string
 end
+
+def program_description( program_directory )
+  # Just kludging it for now.
+  # TODO:  I should use some recognized format for descriptions.  Intelligently parse the file and pull it out.  Maybe even look for a README, file_id.diz, descript.ion or some such?
+  # TODO:  Automatically link() hyperlinks.
+  # TODO:  Automatically markup text markup.
+  # TODO:  If I change the description, then add a button to view the unaltered description.
+
+  i = File.join( 'default-description.txt' )
+  f = File.join( program_directory, program_directory + '.txt' )
+p Dir.pwd
+  p f
+  i = f if File.exists?( f )
+#p i
+  return file_read( i )
+
+  #return 'aaaaa ' * 20
+end # program_description( program_directory )
+
