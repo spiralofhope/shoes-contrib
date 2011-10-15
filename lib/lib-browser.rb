@@ -6,6 +6,7 @@ def editor( filename )
   rebuild()
 end
 
+# TODO:  Why am I using an array for p ?
 def get_list( p, rx )
   file = File.join( p, "#{ p }.rb" )
   #
@@ -16,17 +17,17 @@ def get_list( p, rx )
   f.close
   file_contents.each_line{ |l|
     if l.match( rx ) != nil then
-      tags = l[$~[0].length..-1].lstrip
+      tags = l[ $~[ 0 ].length..-1 ].lstrip
       tags = tags.split( ',' )
       tags.each_index{ |e|
-        tags[e].lstrip!
-        tags[e].rstrip!
+        tags[ e ].lstrip!
+        tags[ e ].rstrip!
       }
-      tags[-1].chomp!
+      tags[ -1 ].chomp!
       return tags
     end
   }
-  return [p]
+  return [ p ]
 end
 
 def program_tags( p )
@@ -35,6 +36,15 @@ end
 
 def program_categories( p )
   return get_list( p, %r{^(# categories:)}i )
+end
+
+def program_description( p )
+  # I thought about using a README, file_id.diz, descript.ion or some such.. but these programs are supposed to be small.  A small description ought to do!  I want everything in that one file, so it's easy to view the source and the description all at once.
+  # TODO:  Automatically link() hyperlinks.
+  # TODO:  Automatically markup text markup.
+  # TODO:  Allow \n  or somehow build multi-line functionality?  Do I need to?  One line keeps things uncluttered.
+  description = get_list( p, %r{^(# description:)}i )
+  return description
 end
 
 def rebuild()
@@ -149,22 +159,3 @@ def file_read( file )
   f.close
   return string
 end
-
-def program_description( program_directory )
-  # Just kludging it for now.
-  # TODO:  I should use some recognized format for descriptions.  Intelligently parse the file and pull it out.  Maybe even look for a README, file_id.diz, descript.ion or some such?
-  # TODO:  Automatically link() hyperlinks.
-  # TODO:  Automatically markup text markup.
-  # TODO:  If I change the description, then add a button to view the unaltered description.
-
-  i = File.join( 'default-description.txt' )
-  f = File.join( program_directory, program_directory + '.txt' )
-p Dir.pwd
-  p f
-  i = f if File.exists?( f )
-#p i
-  return file_read( i )
-
-  #return 'aaaaa ' * 20
-end # program_description( program_directory )
-

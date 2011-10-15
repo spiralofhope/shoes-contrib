@@ -18,6 +18,8 @@ My personal rules are:
 
 Program changes:
 
+  FIXME  Wasn't escape supposed to bring the user back to the main list?
+
   TODO  Why not keep the search bar when viewing the program's source?
 
   TODO  screenshotting support
@@ -195,27 +197,23 @@ def view_program_summary( directory, *splat )
   @content.append do
     flow( :margin_top => 10 ) do
       background( lightyellow, :curve => 10, :margin_left => 5, :margin_right => 20 )
-      stack( width: 150 ) do
+      stack( width: 155 ) do
         #para  # Blank line above the thumbnail.
         program_thumbnail( directory )
       end
-      flow( width: width-150 ) do
+      # Increasing this width provides a right margin for the description.
+      flow( width: width-176 ) do
         para( link( directory ){ view_a_program( directory ) }, tags, "\n" )
-        # TODO:  How would I have this text be on the same line as the program name (the line above this one) and be right-aligned?
-        button "Run" do
+        # TODO:  How would I have these buttons be on the same line as the program name (the line above this one) but be right-aligned?
+        button( "Run" ) do
           program_run( directory )
         end
-        button "Edit Program" do
+        #para( ' ' )
+        button( "Edit", :margin_left => 5 ) do
           editor(
                   File.join( directory, directory + '.rb' )
                 )
         end
-        button "Edit Description" do
-          editor(
-                  File.join( directory, directory + '.txt' )
-                )
-        end
-        # FIXME:  This text needs a right margin.  I can't find the documentation for that.  (RE-TEST)
         stack do
           para( program_description( directory ) )
         end
@@ -255,11 +253,11 @@ def view_categories_list()
     @content.append do
       flow( :margin_top => 10 ) do
         background( lightyellow, :curve => 10, :margin_left => 5, :margin_right => 20 )
-        stack( width: 150 ) do
+        stack( width: 155 ) do
           #para  # Blank line above the thumbnail.
           catgegory_thumbnail( category_name )
         end
-        flow( width: width-150 ) do
+        flow( width: width-155 ) do
           para( link( category_name ){ view_a_category( category_name ) } )
           para( "\n" )
           para( category_description( category_name ) )

@@ -1,5 +1,6 @@
 # tags: circles, oval(), animate{}
 # categories: animation, shapes
+# description: Places 10 circles randomly.  Each individually giggles randomly..
 
 Shoes.app(
             :width => 300,
