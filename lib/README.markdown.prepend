@@ -2,7 +2,12 @@
 This file is written with 'markdown' syntax:
   http://github.github.com/github-flavored-markdown/
   http://daringfireball.net/projects/markdown/syntax
+
+README.markdown is generated from lib/README.markdown.prepend
+so edit that file if you want to make changes.
 -->
+NOTE:  I have stopped programming in Ruby and this project has been shelved.  You are welcome to continue where I left off, or take any code and use it for your own purposes.
+
          /)                                  ,  /)
      _  (/   ___ _  _     _  _____  _/_ __     (/_
     /_)_/ )_(_)_(/_/_)_  (__(_) / (_(__/ (__(_/_) 

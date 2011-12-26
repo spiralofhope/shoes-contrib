@@ -14,6 +14,8 @@ My personal rules are:
 
   - Two-space tabs
 
+  - There's no need to have a large series of different text fields, like author, copyright, author email, date of creation, home page, etc etc until it can be proved that any of those things are actually necessary.
+
 ---
 
 Program changes:
@@ -78,6 +80,7 @@ Program changes:
       - Absorb the samples from https://github.com/ashbb/green_shoes/tree/master/samples, learning what changes were made.
       - Create a red-to-green shoes tutorial, highlighting differences.  There are a lot of changes, and I don't think the authors really know them all.  =)
 
+  TODO  More advanced filtering functionality.
 ---
 
 Other projects to absorb (once this one can properly support all the necessary functionality):
@@ -356,6 +359,7 @@ def view_a_program( directory )
 end # view_a_program( directory )
 
 # TODO:  Syntax highlighting.  Somehow.
+# TODO:  Be able to pull up the user's editor with this code.
 def program_contents( program_directory )
   # Just grabbing the first file for now..
   file = Dir.glob( File.join( program_directory, '*.rb' ) )[0]
